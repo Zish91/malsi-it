@@ -1,17 +1,111 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="hero-badge">🔒 Sécurité · Infrastructure · Maintenance</span>
+      <h1>Votre réseau,<br><span class="highlight">sécurisé et maîtrisé.</span></h1>
+      <p class="hero-text">
+        MALSI IT accompagne les PME et collectivités dans la sécurisation, 
+        l'administration et la maintenance de leurs infrastructures informatiques.
+      </p>
+      <div class="hero-buttons">
+        <a href="/contact" class="btn btn-primary">Diagnostic gratuit →</a>
+        <a href="#services" class="btn btn-outline">Nos services</a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">Cisco</span>
+        <span class="tag">Windows Server</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Active Directory</span>
+        <span class="tag">Firewall</span>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    padding: 8rem 1.5rem 5rem;
+    background: var(--bg-alt);
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight {
+    color: var(--accent);
+  }
+
+  .hero-text {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    max-width: 580px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-tags {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    color: var(--slate);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 6rem 1rem 3.5rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero-text {
+      font-size: 1rem;
+    }
+  }
+</style>
