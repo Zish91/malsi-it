@@ -25,9 +25,45 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <p class="section-label">Nos services</p>
+      <h2 class="section-title">Ce que nous faisons pour vous</h2>
+      <p class="section-subtitle">Des solutions concrètes pour sécuriser et fiabiliser votre informatique.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-number">01</span>
+          <h3>Audit & Sécurité Réseau</h3>
+          <p>Analyse de votre infrastructure, détection des failles, plan de remédiation et mise en conformité.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-number">02</span>
+          <h3>Administration Systèmes</h3>
+          <p>Gestion de vos serveurs Windows et Linux, Active Directory, GPO, DNS, DHCP.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-number">03</span>
+          <h3>Maintenance & Support</h3>
+          <p>Maintenance préventive, supervision réseau, interventions rapides sur site ou à distance.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-number">04</span>
+          <h3>Infrastructure Réseau</h3>
+          <p>Conception et déploiement LAN/WAN, Wi-Fi, VPN, firewall, segmentation VLAN.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
+  /* ===== HERO ===== */
   .hero {
     padding: 8rem 1.5rem 5rem;
     background: var(--bg-alt);
@@ -95,6 +131,69 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 6px;
   }
 
+  /* ===== SERVICES ===== */
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .section-subtitle {
+    text-align: center;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+    transform: translateY(-3px);
+  }
+
+  .service-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    opacity: 0.12;
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
     .hero {
       padding: 6rem 1rem 3.5rem;
@@ -106,6 +205,10 @@ import Layout from '../layouts/Layout.astro';
 
     .hero-text {
       font-size: 1rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
