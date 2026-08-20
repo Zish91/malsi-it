@@ -5,6 +5,18 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog')).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
+
+const lottieMap = {
+  'Cybersécurité': '/lottie/blog-security.json',
+  'Infrastructure': '/lottie/blog-network.json',
+  'Administration': '/lottie/blog-system.json',
+};
+
+const labelMap = {
+  'Cybersécurité': 'SÉCURITÉ',
+  'Infrastructure': 'RÉSEAU',
+  'Administration': 'SYSTÈME',
+};
 ---
 
 <BaseLayout title="Blog — MALSI IT" description="Articles et conseils en cybersécurité, infrastructure réseau et administration système pour les PME.">
@@ -13,25 +25,30 @@ const posts = (await getCollection('blog')).sort(
     <div class="circle circle-2"></div>
   </div>
 
-  <section class="blog-page">
+  <section class="blog-hero">
     <div class="container">
-      <h1>Blog</h1>
-      <p class="blog-page__subtitle">Conseils, retours d'expérience et bonnes pratiques pour sécuriser et gérer votre infrastructure IT.</p>
+      <h1 class="no-dot">Conseils et bonnes pratiques pour sécuriser votre infrastructure IT</h1>
+    </div>
+  </section>
 
-      <div class="blog-page__grid">
+  <section class="blog-listing bg-white">
+    <div class="container">
+      <div class="blog-listing__grid">
         {posts.map((post) => (
-          <a href={`/blog/${post.id}`} class="blog-card">
-            <div class="blog-card__thumbnail">
-              <span>{post.data.category.toUpperCase()}</span>
+          <a href={`/blog/${post.id}`} class="blog-post-item">
+            <div class="blog-post-item__thumbnail">
+              <dotlottie-player src={lottieMap[post.data.category] || '/lottie/blog-security.json'} background="transparent" speed="1" style="width:160px;height:160px;" loop autoplay></dotlottie-player>
+              <span class="blog-post-item__label">{labelMap[post.data.category] || post.data.category.toUpperCase()}</span>
             </div>
-            <div class="blog-card__content">
-              <div class="blog-card__meta">
-                <span class="blog-card__category">{post.data.category}</span>
-                <span class="blog-card__date">{new Date(post.data.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long' })}</span>
+            <div class="blog-post-item__inner">
+              <div class="blog-post-item__meta">
+                <span class="blog-post-item__category">{post.data.category}</span>
+                <span class="blog-post-item__date">{new Date(post.data.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long' })}</span>
               </div>
-              <h2 class="blog-card__title">{post.data.title}</h2>
-              <p class="blog-card__description">{post.data.description}</p>
+              <h2 class="blog-post-item__title">{post.data.title}</h2>
+              <p class="blog-post-item__description">{post.data.description}</p>
             </div>
+            <div class="blog-post-item__background"></div>
           </a>
         ))}
       </div>
@@ -40,83 +57,126 @@ const posts = (await getCollection('blog')).sort(
 </BaseLayout>
 
 <style>
-  .blog-page {
-    padding: 8rem 0 4rem;
+  .blog-hero {
+    padding: 10rem 0 4rem;
     margin: 0;
   }
 
-  .blog-page h1 { margin-bottom: 1rem; }
-
-  .blog-page__subtitle {
-    max-width: 600px;
-    margin-bottom: 3rem;
+  .blog-hero h1 {
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 2.8rem;
+    max-width: 700px;
   }
 
-  .blog-page__grid {
+  .blog-listing__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
   }
 
-  .blog-card {
+  .blog-post-item {
     border-radius: 1rem;
     overflow: hidden;
+    position: relative;
     display: block;
+    width: 100%;
+    color: var(--color-text-dark);
     text-decoration: none;
-    background: var(--color-white);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    outline: 1px solid #efefef;
+    transition: color 0.3s ease;
   }
 
-  .blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    color: inherit;
-    text-decoration: none;
-  }
+  .blog-post-item:hover { color: var(--color-text-dark); text-decoration: none; }
 
-  .blog-card__thumbnail {
-    height: 200px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  .blog-post-item__thumbnail {
+    height: 210px;
+    background-color: var(--color-primary-light);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 2;
   }
 
-  .blog-card__thumbnail span {
+  .blog-post-item__label {
     color: var(--color-white);
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 700;
     letter-spacing: 3px;
-    opacity: 0.5;
   }
 
-  .blog-card__content { padding: 1.5rem; }
+  .blog-post-item__inner { padding: 2rem 1rem; position: relative; z-index: 2; }
 
-  .blog-card__meta {
+  .blog-post-item__meta { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; }
+
+  .blog-post-item__category {
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 0.85rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .blog-card__category { color: var(--color-accent); font-weight: 600; }
-  .blog-card__date { color: rgba(10, 14, 42, 0.5); }
-
-  .blog-card__title {
     color: var(--color-text-dark);
-    font-size: 1.1rem;
-    margin: 0 0 0.5rem;
-    line-height: 1.4;
+    font-weight: 700;
   }
 
-  .blog-card__description {
-    color: rgba(10, 14, 42, 0.6);
-    font-size: 0.9rem;
-    margin: 0;
+  .blog-post-item__category::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .blog-post-item__date { color: var(--color-text-dark); }
+
+  .blog-post-item__title {
+    border-top: 2px solid var(--color-accent);
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    color: var(--color-text-dark);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .blog-post-item__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+  }
+
+  .blog-post-item__background {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    background: var(--color-primary);
+    border-radius: 500px 500px 0 0;
+    top: 100%;
+    transition: top 0.2s ease;
+    z-index: 1;
+  }
+
+  @media (min-width: 900px) {
+    .blog-post-item:hover { color: var(--color-white); }
+    .blog-post-item:hover .blog-post-item__background { top: -50%; }
+    .blog-post-item:hover .blog-post-item__category { color: var(--color-white); }
+    .blog-post-item:hover .blog-post-item__category::before { background: var(--color-white); }
+    .blog-post-item:hover .blog-post-item__title { border-top-color: var(--color-white); color: var(--color-white); }
+    .blog-post-item:hover .blog-post-item__description { color: rgba(255,255,255,0.8); }
+    .blog-post-item:hover .blog-post-item__date { color: rgba(255,255,255,0.7); }
   }
 
   @media (max-width: 900px) {
-    .blog-page__grid { grid-template-columns: 1fr; }
+    .blog-listing__grid { grid-template-columns: 1fr; }
+    .blog-hero h1 { font-size: 2rem; }
   }
 </style>
