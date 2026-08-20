@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-content">
-      <span class="hero-badge">🔒 Sécurité · Infrastructure · Maintenance</span>
+      <span class="hero-badge">Sécurité · Infrastructure · Maintenance</span>
       <h1>Votre réseau,<br><span class="highlight">sécurisé et maîtrisé.</span></h1>
       <p class="hero-text">
         MALSI IT accompagne les PME et collectivités dans la sécurisation, 
@@ -26,36 +26,100 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section" id="services">
+  <!-- SERVICES ROUE -->
+  <section class="approach" id="services">
     <div class="container">
-      <p class="section-label">Nos services</p>
-      <h2 class="section-title">Ce que nous faisons pour vous</h2>
-      <p class="section-subtitle">Des solutions concrètes pour sécuriser et fiabiliser votre informatique.</p>
+      <div class="content content-title">
+        <h2 class="home-approach__title">Comment nous protégeons votre infrastructure</h2>
+      </div>
+      <div class="content">
+        <div class="approach-">
+          <!-- Couche 1 : icônes + labels (cliquables) -->
+          <div class="approach-circle-zones">
+            <div class="zone zone-1 active" data-index="0" data-rotate="audit">
+              <div class="zone-in">
+                <div class="home-approach__text">
+                  <div class="imgs">
+                    <svg class="light" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#150d60" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                  </div>
+                  <p>AUDIT</p>
+                </div>
+              </div>
+            </div>
+            <div class="zone zone-2" data-index="1" data-rotate="admin">
+              <div class="zone-in">
+                <div class="home-approach__text">
+                  <div class="imgs">
+                    <svg class="light" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#150d60" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                  </div>
+                  <p>ADMIN</p>
+                </div>
+              </div>
+            </div>
+            <div class="zone zone-3" data-index="2" data-rotate="maintenance">
+              <div class="zone-in">
+                <div class="home-approach__text">
+                  <div class="imgs">
+                    <svg class="light" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#150d60" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  </div>
+                  <p>MAINTENANCE</p>
+                </div>
+              </div>
+            </div>
+            <div class="zone zone-4" data-index="3" data-rotate="reseau">
+              <div class="zone-in">
+                <div class="home-approach__text">
+                  <div class="imgs">
+                    <svg class="light" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#150d60" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                  </div>
+                  <p>RÉSEAU</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <span class="service-number">01</span>
-          <h3>Audit & Sécurité Réseau</h3>
-          <p>Analyse de votre infrastructure, détection des failles, plan de remédiation et mise en conformité.</p>
+          <!-- Couche 2 : spotlight blanc (tourne) -->
+          <div class="approach-circle-zones approach-circle-active audit">
+            <div class="zone zone-1 active"></div>
+            <div class="zone zone-2"></div>
+            <div class="zone zone-3"></div>
+            <div class="zone zone-4"></div>
+          </div>
+
+          <!-- Centre -->
+          <div class="approach-circle-center"></div>
         </div>
 
-        <div class="service-card">
-          <span class="service-number">02</span>
-          <h3>Administration Systèmes</h3>
-          <p>Gestion de vos serveurs Windows et Linux, Active Directory, GPO, DNS, DHCP.</p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-number">03</span>
-          <h3>Maintenance & Support</h3>
-          <p>Maintenance préventive, supervision réseau, interventions rapides sur site ou à distance.</p>
-        </div>
-
-        <div class="service-card">
-          <span class="service-number">04</span>
-          <h3>Infrastructure Réseau</h3>
-          <p>Conception et déploiement LAN/WAN, Wi-Fi, VPN, firewall, segmentation VLAN.</p>
+        <!-- DETAIL -->
+        <div class="steps-text">
+          <div class="step step-1" style="display:block;" data-step="0">
+            <h3 class="home-approach__item-title">AUDIT & SÉCURITÉ</h3>
+            <span class="home-approach__item-subtitle">Identifiez vos failles avant qu'elles ne soient exploitées</span>
+            <p class="text text--light home-approach__item-text">On analyse votre infrastructure de A à Z, on détecte les vulnérabilités et on met en place un plan de remédiation adapté à votre activité et votre budget.</p>
+            <a href="/services" class="cresco-button"><span>EN SAVOIR PLUS</span></a>
+          </div>
+          <div class="step step-2" style="display:none;" data-step="1">
+            <h3 class="home-approach__item-title">ADMINISTRATION SYSTÈMES</h3>
+            <span class="home-approach__item-subtitle">Vos systèmes gérés par un expert, pas par le hasard</span>
+            <p class="text text--light home-approach__item-text">Active Directory, GPO, serveurs Windows et Linux, DNS, DHCP — on administre votre SI pour que votre équipe puisse travailler sans friction.</p>
+            <a href="/services" class="cresco-button"><span>EN SAVOIR PLUS</span></a>
+          </div>
+          <div class="step step-3" style="display:none;" data-step="2">
+            <h3 class="home-approach__item-title">MAINTENANCE & SUPPORT</h3>
+            <span class="home-approach__item-subtitle">Prévenir plutôt que guérir, intervenir avant la panne</span>
+            <p class="text text--light home-approach__item-text">Maintenance préventive, supervision réseau, mises à jour et correctifs. On surveille et on intervient — sur site ou à distance — avant que ça tombe.</p>
+            <a href="/services" class="cresco-button"><span>EN SAVOIR PLUS</span></a>
+          </div>
+          <div class="step step-4" style="display:none;" data-step="3">
+            <h3 class="home-approach__item-title">INFRASTRUCTURE RÉSEAU</h3>
+            <span class="home-approach__item-subtitle">Un réseau solide, pensé pour évoluer avec vous</span>
+            <p class="text text--light home-approach__item-text">Architecture LAN/WAN, Wi-Fi, VPN, firewall, switches et routeurs Cisco, segmentation VLAN. Du câble au cloud, on construit des réseaux fiables.</p>
+            <a href="/services" class="cresco-button"><span>EN SAVOIR PLUS</span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -64,151 +128,181 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   /* ===== HERO ===== */
-  .hero {
-    padding: 8rem 1.5rem 5rem;
-    background: var(--bg-alt);
-    text-align: center;
-  }
+  .hero { padding: 8rem 1.5rem 5rem; background: var(--bg-alt); text-align: center; }
+  .hero-content { max-width: 750px; margin: 0 auto; }
+  .hero-badge { display: inline-block; background: var(--green-light); color: var(--green); font-weight: 600; font-size: 0.85rem; padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.5rem; }
+  h1 { font-size: 3.2rem; font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 1.5rem; }
+  .highlight { color: var(--accent); }
+  .hero-text { font-size: 1.15rem; color: var(--text-light); max-width: 580px; margin: 0 auto 2rem; line-height: 1.8; }
+  .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .hero-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+  .tag { background: var(--bg-white); border: 1px solid var(--border); color: var(--slate); font-size: 0.8rem; font-weight: 500; padding: 0.35rem 0.85rem; border-radius: 6px; }
 
-  .hero-content {
-    max-width: 750px;
-    margin: 0 auto;
-  }
+  /* ===== APPROACH — EXACT CRESCO CSS ===== */
+  .approach { overflow: hidden; padding-bottom: 128px; background-color: #150d60; color: #fff; padding-top: 0; }
+  .approach p { max-width: 100%; }
 
-  .hero-badge {
-    display: inline-block;
-    background: var(--green-light);
-    color: var(--green);
-    font-weight: 600;
-    font-size: 0.85rem;
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    margin-bottom: 1.5rem;
-  }
+  .approach .content.content-title { grid-template-columns: 1fr; margin: 6rem 0 0; }
+  .home-approach__title { padding-bottom: 2rem; color: #fff; font-size: 2rem; font-weight: 700; }
 
-  h1 {
-    font-size: 3.2rem;
-    font-weight: 800;
-    color: var(--navy);
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-  }
+  .approach .approach- { height: 650px; position: relative; width: 650px; }
 
-  .highlight {
-    color: var(--accent);
-  }
-
-  .hero-text {
-    font-size: 1.15rem;
-    color: var(--text-light);
-    max-width: 580px;
-    margin: 0 auto 2rem;
-    line-height: 1.8;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-tags {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    background: var(--bg-white);
-    border: 1px solid var(--border);
-    color: var(--slate);
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.35rem 0.85rem;
-    border-radius: 6px;
-  }
-
-  /* ===== SERVICES ===== */
-  .section-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  .section-title {
-    text-align: center;
-  }
-
-  .section-subtitle {
-    text-align: center;
-  }
-
-  .services-grid {
+  .approach .approach-circle-zones {
+    border-radius: 50%;
+    inset: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    height: 650px;
+    overflow: hidden;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 650px;
+    z-index: 2;
   }
 
-  .service-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 2rem;
-    transition: all 0.3s ease;
+  .approach .approach-circle-zones .zone { cursor: pointer; overflow: hidden; transition: background 0.5s; }
+  .approach .approach-circle-zones .zone.active { color: var(--accent); }
+  .approach .approach-circle-zones .zone.active .home-approach__text { transform: scale(1); }
+  .approach .approach-circle-zones .zone.active .home-approach__text .light { opacity: 1; }
+  .approach .approach-circle-zones .zone.active .home-approach__text .dark { opacity: 0; }
+
+  .approach .approach-circle-zones .zone-in {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    transform: rotate(-45deg);
   }
 
-  .service-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
-    transform: translateY(-3px);
+  .approach .home-approach__text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    justify-content: center;
+    text-align: center;
+    transform: scale(0.8);
+    transition: transform 0.5s;
+    width: 200px;
   }
 
-  .service-number {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--accent);
-    opacity: 0.12;
-    line-height: 1;
-    display: block;
-    margin-bottom: 0.75rem;
+  .approach .home-approach__text .imgs { height: 80px; margin: auto; position: relative; width: 80px; }
+  .approach .home-approach__text .imgs svg { height: 100%; left: 0; object-fit: contain; position: absolute; top: 0; transition: opacity 0.3s; width: 100%; }
+  .approach .home-approach__text .light { opacity: 0; }
+  .approach .home-approach__text .dark { opacity: 1; }
+  .approach .home-approach__text p { font-size: 1.4rem; margin-bottom: 0; font-weight: 700; letter-spacing: 1px; }
+
+  /* Couche active — TOURNE */
+  .approach .approach-circle-active { transform: rotate(45deg); transition: transform 0.5s; z-index: 1 !important; }
+  .approach .approach-circle-active .zone { background: rgb(24, 15, 109); cursor: default; }
+  .approach .approach-circle-active .zone.active { background-color: #fff; }
+
+  /* Rotations par service */
+  .approach .approach-circle-active.audit { transform: rotate(45deg); }
+  .approach .approach-circle-active.admin { transform: rotate(135deg); }
+  .approach .approach-circle-active.maintenance { transform: rotate(225deg); }
+  .approach .approach-circle-active.reseau { transform: rotate(315deg); }
+
+  /* Centre */
+  .approach .approach-circle-center {
+    background-color: #150d60;
+    border-radius: 50%;
+    inset: 0;
+    height: 40%;
+    margin: auto;
+    position: absolute;
+    width: 40%;
+    z-index: 3;
+    border: 4px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .service-card h3 {
-    font-size: 1.15rem;
+  .approach .approach-circle-center::after {
+    content: 'M.';
+    font-size: 4rem;
     font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 0.75rem;
+    color: #fff;
   }
 
-  .service-card p {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    line-height: 1.7;
+  /* Grid content */
+  .approach .content { gap: 1rem; align-items: center; display: grid; grid-template-columns: 60% 1fr; margin-bottom: 3rem; }
+
+  /* Steps texte */
+  .approach .steps-text { margin: auto; max-width: 500px; min-height: 500px; position: relative; display: flex; align-items: center; }
+  .approach .steps-text .step { position: absolute; }
+
+  .home-approach__item-title { color: #fff; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 1px; }
+  .home-approach__item-subtitle { display: block; font-size: 1.05rem; font-weight: 600; color: rgba(255, 255, 255, 0.85); margin-bottom: 1rem; }
+  .home-approach__item-text { font-size: 0.95rem; color: rgba(255, 255, 255, 0.55); line-height: 1.8; margin-bottom: 2rem; }
+
+  .cresco-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: background 0.3s;
+    font-family: var(--font);
   }
+  .cresco-button:hover { background: var(--accent-hover); }
+
+  /* Steps animation */
+  .step-enter-active, .step-leave-active { transition: opacity 0.5s, transform 0.5s; }
+  .step-enter, .step-leave-to { opacity: 0; transform: scale(0.9); }
 
   /* ===== RESPONSIVE ===== */
+  @media (max-width: 1200px) {
+    .approach .approach-, .approach .approach-circle-zones { height: 500px; margin: auto; width: 500px; }
+  }
+  @media (max-width: 900px) {
+    .approach .content { grid-template-columns: 1fr; }
+    .approach { padding-bottom: 2rem; }
+  }
   @media (max-width: 768px) {
-    .hero {
-      padding: 6rem 1rem 3.5rem;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-    }
-
-    .hero-text {
-      font-size: 1rem;
-    }
-
-    .services-grid {
-      grid-template-columns: 1fr;
-    }
+    .hero { padding: 6rem 1rem 3.5rem; }
+    h1 { font-size: 2.2rem; }
+    .hero-text { font-size: 1rem; }
+  }
+  @media (max-width: 600px) {
+    .approach .approach-, .approach .approach-circle-zones { height: 400px; width: 400px; }
+    .approach .approach-circle-zones .home-approach__text { transform: scale(0.7); }
+    .approach .approach-circle-zones .home-approach__text .imgs { display: none; }
+    .approach .approach-circle-zones .zone.active .home-approach__text { transform: scale(0.8); }
+  }
+  @media (max-width: 450px) {
+    .approach .approach-, .approach .approach-circle-zones { height: 300px; width: 300px; }
   }
 </style>
+
+<script>
+  const zones = document.querySelectorAll('.approach-circle-zones:not(.approach-circle-active) .zone');
+  const activeLayer = document.querySelector('.approach-circle-active');
+  const steps = document.querySelectorAll('.step');
+
+  // Mapping index → classe de rotation
+  const rotateClasses = ['audit', 'admin', 'maintenance', 'reseau'];
+
+  zones.forEach((zone) => {
+    zone.addEventListener('click', () => {
+      const index = parseInt(zone.dataset.index);
+      const rotateName = zone.dataset.rotate;
+
+      // Reset zones actives
+      zones.forEach(z => z.classList.remove('active'));
+      zone.classList.add('active');
+
+      // Rotation du spotlight
+      activeLayer.className = 'approach-circle-zones approach-circle-active ' + rotateName;
+
+      // Swap texte
+      steps.forEach(s => s.style.display = 'none');
+      steps[index].style.display = 'block';
+    });
+  });
+</script>
