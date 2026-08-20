@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Administration Système — MALSI IT" description="Gestion de votre parc informatique : Active Directory, GPO, droits, mises à jour.">
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <section class="service-page-hero">
+    <div class="container">
+      <span class="service-page-hero__number">02</span>
+      <h1 class="no-dot">Administration Système</h1>
+      <p class="service-page-hero__subtitle">Vos serveurs et postes, gérés par des experts</p>
+    </div>
+  </section>
+
+  <section class="service-page-content bg-white">
+    <div class="container">
+      <div class="service-page-body">
+        <h2>Votre parc informatique entre de bonnes mains</h2>
+        <p>Active Directory, stratégies de groupe, gestion des droits, déploiement de mises à jour — nous administrons votre parc informatique comme s'il était le nôtre.</p>
+
+        <h3>Ce que nous proposons</h3>
+        <ul>
+          <li>Déploiement et gestion Active Directory</li>
+          <li>Stratégies de groupe (GPO)</li>
+          <li>Gestion des comptes et des droits d'accès</li>
+          <li>Déploiement et gestion des mises à jour (WSUS)</li>
+          <li>Administration des serveurs Windows et Linux</li>
+        </ul>
+
+        <h3>Pour qui ?</h3>
+        <p>PME et collectivités qui ont besoin d'un parc informatique bien géré sans embaucher un administrateur à plein temps.</p>
+
+        <a href="/#contact" class="btn-primary">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-page-hero { padding: 10rem 0 4rem; margin: 0; }
+  .service-page-hero__number { color: var(--color-accent); font-size: 1rem; font-weight: 700; }
+  .service-page-hero h1 { font-weight: 700; margin-top: 0.5rem; }
+  .service-page-hero__subtitle { font-size: 1.2rem; max-width: 600px; }
+
+  .service-page-body { max-width: 800px; padding: 2rem 0 4rem; }
+  .service-page-body h2 { color: var(--color-text-dark); font-weight: 700; margin-bottom: 1rem; }
+  .service-page-body h3 { color: var(--color-text-dark); font-weight: 700; margin-top: 2rem; margin-bottom: 0.5rem; }
+  .service-page-body p { color: var(--color-text-dark); line-height: 1.8; margin-bottom: 1.5rem; }
+  .service-page-body ul { color: var(--color-text-dark); padding-left: 1.5rem; margin-bottom: 1.5rem; list-style: disc; }
+  .service-page-body li { margin-bottom: 0.5rem; line-height: 1.6; }
+  .service-page-body .btn-primary { margin-top: 2rem; }
+</style>

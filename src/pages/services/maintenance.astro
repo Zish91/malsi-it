@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Maintenance — MALSI IT" description="Supervision proactive, sauvegardes, mises à jour et support réactif pour votre infrastructure.">
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <section class="service-page-hero">
+    <div class="container">
+      <span class="service-page-hero__number">04</span>
+      <h1 class="no-dot">Maintenance</h1>
+      <p class="service-page-hero__subtitle">Anticipez les pannes, pas les urgences</p>
+    </div>
+  </section>
+
+  <section class="service-page-content bg-white">
+    <div class="container">
+      <div class="service-page-body">
+        <h2>Votre infrastructure en pleine forme, tout le temps</h2>
+        <p>Supervision proactive, sauvegardes automatisées, mises à jour régulières, support réactif. Nous gardons votre infrastructure en pleine forme pour que vous puissiez vous concentrer sur votre métier.</p>
+
+        <h3>Ce que nous proposons</h3>
+        <ul>
+          <li>Supervision proactive 24/7</li>
+          <li>Sauvegardes automatisées et testées</li>
+          <li>Mises à jour système et applicatives</li>
+          <li>Support technique réactif (sur site et à distance)</li>
+          <li>Gestion du cycle de vie du matériel</li>
+          <li>Rapports mensuels d'activité</li>
+        </ul>
+
+        <h3>Pour qui ?</h3>
+        <p>PME et collectivités qui veulent éviter les pannes, les pertes de données et les interruptions — sans gérer ça en interne.</p>
+
+        <a href="/#contact" class="btn-primary">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-page-hero { padding: 10rem 0 4rem; margin: 0; }
+  .service-page-hero__number { color: var(--color-accent); font-size: 1rem; font-weight: 700; }
+  .service-page-hero h1 { font-weight: 700; margin-top: 0.5rem; }
+  .service-page-hero__subtitle { font-size: 1.2rem; max-width: 600px; }
+
+  .service-page-body { max-width: 800px; padding: 2rem 0 4rem; }
+  .service-page-body h2 { color: var(--color-text-dark); font-weight: 700; margin-bottom: 1rem; }
+  .service-page-body h3 { color: var(--color-text-dark); font-weight: 700; margin-top: 2rem; margin-bottom: 0.5rem; }
+  .service-page-body p { color: var(--color-text-dark); line-height: 1.8; margin-bottom: 1.5rem; }
+  .service-page-body ul { color: var(--color-text-dark); padding-left: 1.5rem; margin-bottom: 1.5rem; list-style: disc; }
+  .service-page-body li { margin-bottom: 0.5rem; line-height: 1.6; }
+  .service-page-body .btn-primary { margin-top: 2rem; }
+</style>

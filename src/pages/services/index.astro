@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Services — MALSI IT" description="Audit, administration, infrastructure réseau et maintenance informatique pour PME et collectivités.">
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <section class="services-hero">
+    <div class="container">
+      <h1 class="no-dot">Nos services</h1>
+      <p>Des solutions complètes pour sécuriser, administrer et maintenir votre infrastructure informatique.</p>
+    </div>
+  </section>
+
+  <section class="services-grid bg-white">
+    <div class="container">
+      <div class="services-list">
+        <a href="/services/audit-securite" class="service-card" data-sal="fade-up">
+          <span class="service-card__number">01</span>
+          <h2 class="service-card__title">Audit & Sécurité</h2>
+          <p class="service-card__text">Tests d'intrusion, analyse des configurations, conformité aux bonnes pratiques. Identifiez vos failles avant les attaquants.</p>
+          <span class="service-card__link">En savoir plus →</span>
+        </a>
+
+        <a href="/services/administration" class="service-card" data-sal="fade-up">
+          <span class="service-card__number">02</span>
+          <h2 class="service-card__title">Administration Système</h2>
+          <p class="service-card__text">Active Directory, stratégies de groupe, gestion des droits, mises à jour. Votre parc informatique géré par des experts.</p>
+          <span class="service-card__link">En savoir plus →</span>
+        </a>
+
+        <a href="/services/infrastructure-reseau" class="service-card" data-sal="fade-up">
+          <span class="service-card__number">03</span>
+          <h2 class="service-card__title">Infrastructure Réseau</h2>
+          <p class="service-card__text">VLANs, pare-feu, VPN, Wi-Fi entreprise. Du câblage physique à la configuration des switchs et routeurs.</p>
+          <span class="service-card__link">En savoir plus →</span>
+        </a>
+
+        <a href="/services/maintenance" class="service-card" data-sal="fade-up">
+          <span class="service-card__number">04</span>
+          <h2 class="service-card__title">Maintenance</h2>
+          <p class="service-card__text">Supervision proactive, sauvegardes automatisées, mises à jour régulières, support réactif. Zéro interruption.</p>
+          <span class="service-card__link">En savoir plus →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .services-hero {
+    padding: 10rem 0 4rem;
+    margin: 0;
+  }
+
+  .services-hero h1 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .services-hero p {
+    max-width: 600px;
+  }
+
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    border: 1px solid #e2e2e2;
+    border-radius: 0.5rem;
+    padding: 2.5rem 2rem;
+    text-decoration: none;
+    color: var(--color-text-dark);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    color: var(--color-text-dark);
+    text-decoration: none;
+  }
+
+  .service-card__number {
+    color: var(--color-accent);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .service-card__title {
+    color: var(--color-text-dark);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+
+  .service-card__text {
+    color: var(--color-text-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+
+  .service-card__link {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .services-list { grid-template-columns: 1fr; }
+  }
+</style>

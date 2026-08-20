@@ -11,6 +11,7 @@ const {
 
 import { ClientRouter } from "astro:transitions";
 import PageTransition from "../components/PageTransition.astro";
+import DropdownStyles from "../components/DropdownStyles.astro";
 ---
 
 <!DOCTYPE html>
@@ -20,6 +21,7 @@ import PageTransition from "../components/PageTransition.astro";
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <ClientRouter />
   <PageTransition />
+  <DropdownStyles />
   <meta name="description" content={description} />
   <title>{title}</title>
   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
@@ -46,7 +48,15 @@ import PageTransition from "../components/PageTransition.astro";
       <div class="menu-wrapper" id="menu-wrapper">
         <ul class="menu-desktop">
           <li><a href="/" class="menu-link">Accueil</a></li>
-          <li><a href="#services" class="menu-link">Services</a></li>
+          <li class="has-dropdown">
+              <a href="/services" class="menu-link">Services</a>
+              <div class="dropdown">
+                <a href="/services/audit-securite" class="dropdown__link">Audit &amp; Sécurité</a>
+                <a href="/services/administration" class="dropdown__link">Administration Système</a>
+                <a href="/services/infrastructure-reseau" class="dropdown__link">Infrastructure Réseau</a>
+                <a href="/services/maintenance" class="dropdown__link">Maintenance</a>
+              </div>
+            </li>
           <li><a href="#apropos" class="menu-link">À propos</a></li>
           <li><a href="/blog" class="menu-link">Blog</a></li>
           <li><a href="#contact" class="menu-link">Contact</a></li>
