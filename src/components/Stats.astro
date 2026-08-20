@@ -1,0 +1,134 @@
+<section class="home-stats bg-gray">
+  <div class="home-stats__inner container">
+    <div class="home-stats__texts">
+      <h2 data-sal="fade-up">Ces chiffres font peur.<br/>Les nôtres rassurent.</h2>
+      <p class="text--dark">Les entreprises accompagnées par un prestataire IT réduisent leurs incidents de 70%, divisent par 3 leur temps d'arrêt, et dorment tranquilles.</p>
+      <p class="text--dark">MALSI IT vous accompagne de l'audit initial à la maintenance quotidienne — pour que ces statistiques ne soient jamais les vôtres.</p>
+      <a href="#contact" class="btn-primary" style="margin-top: 2rem;">Protégez votre entreprise</a>
+    </div>
+    <div class="home-stats__stats">
+      <div class="home-stats__item">
+        <dotlottie-player src="/lottie/90.json" background="transparent" speed="1" style="width:48px;height:48px;" loop autoplay></dotlottie-player>
+        <div class="home-stats__number-row">
+          <span class="home-stats__number" data-target="90">0</span>
+          <span class="home-stats__suffix">%</span>
+        </div>
+        <span class="home-stats__number-text">des cyberattaques ciblent les entreprises de -250 salariés</span>
+      </div>
+      <div class="home-stats__item home-stats__item--positive">
+        <dotlottie-player src="/lottie/85.json" background="transparent" speed="1" style="width:48px;height:48px;" loop autoplay></dotlottie-player>
+        <div class="home-stats__number-row">
+          <span class="home-stats__number" data-target="85">0</span>
+          <span class="home-stats__suffix">%</span>
+        </div>
+        <span class="home-stats__number-text">des incidents évités grâce à une maintenance proactive</span>
+      </div>
+      <div class="home-stats__item">
+        <dotlottie-player src="/lottie/43.json" background="transparent" speed="1" style="width:48px;height:48px;" loop autoplay></dotlottie-player>
+        <div class="home-stats__number-row">
+          <span class="home-stats__number" data-target="43">0</span>
+          <span class="home-stats__suffix">%</span>
+        </div>
+        <span class="home-stats__number-text">des PME victimes d'une attaque cessent leur activité</span>
+      </div>
+      <div class="home-stats__item home-stats__item--positive">
+        <dotlottie-player src="/lottie/70.json" background="transparent" speed="1" style="width:48px;height:48px;" loop autoplay></dotlottie-player>
+        <div class="home-stats__number-row">
+          <span class="home-stats__number" data-target="70">0</span>
+          <span class="home-stats__suffix">%</span>
+        </div>
+        <span class="home-stats__number-text">de réduction des pannes avec un prestataire IT régulier</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-stats {
+    border-radius: 200px 0 0 0;
+    position: relative;
+    padding-top: 8rem;
+  }
+
+
+  .home-stats__inner {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem 20px 6rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-stats__texts { grid-column: 1 / 7; }
+  .home-stats__texts h2 { color: var(--color-text-dark); margin-bottom: 1.5rem; }
+  .home-stats__texts p { color: rgba(10, 14, 42, 0.6); margin: 0; padding-right: 2rem; }
+  .home-stats__texts p + p { margin-top: 0.5rem; }
+
+  .home-stats__stats {
+    grid-column: 7 / 11;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .home-stats__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    text-align: center;
+    gap: 0.3rem;
+  }
+
+  .home-stats__item--positive {
+    border-left: 3px solid #22c55e;
+  }
+
+  .home-stats__number-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .home-stats__number { font-size: 2.8rem; font-weight: 700; color: var(--color-primary); }
+  .home-stats__suffix { font-size: 1.6rem; font-weight: 600; color: var(--color-primary); }
+  .home-stats__number-text { color: rgba(10, 14, 42, 0.7); font-size: 0.85rem; }
+
+  @media (max-width: 900px) {
+    .home-stats__texts { grid-column: 1 / 11; padding-right: 0; }
+    .home-stats__stats { grid-column: 1 / 11; gap: 1rem; }
+    .home-stats__number { font-size: 2rem; }
+  }
+</style>
+
+<script>
+  const counters = document.querySelectorAll('.home-stats__number[data-target]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = parseInt(entry.target.getAttribute('data-target'));
+        let count = 0;
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        const updateCount = () => {
+          count += increment;
+          if (count < target) {
+            entry.target.textContent = Math.floor(count);
+            requestAnimationFrame(updateCount);
+          } else {
+            entry.target.textContent = target;
+          }
+        };
+        updateCount();
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+</script>

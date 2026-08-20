@@ -1,0 +1,274 @@
+<section class="approach" id="services">
+  <div class="container">
+    <div class="content content-title">
+      <h2 data-sal="fade-up" class="title-text home-approach__title">Comment nous protégeons votre entreprise</h2>
+    </div>
+
+    <div class="content">
+      <div class="approach-wrapper">
+        <div class="approach-wheel">
+          <div class="approach-circle-zones approach-circle-active assess">
+            <div class="zone active"></div>
+            <div class="zone"></div>
+            <div class="zone"></div>
+            <div class="zone"></div>
+          </div>
+
+          <div class="approach-circle-zones approach-circle-front">
+            <div class="zone active" data-index="0">
+              <div class="zone-in">
+                <div class="home-approach__text">
+                  <p>AUDIT &<br/>SÉCURITÉ</p>
+                </div>
+              </div>
+            </div>
+            <div class="zone" data-index="1">
+              <div class="zone-in">
+                <div class="home-approach__text">
+                  <p>ADMIN<br/>SYSTÈME</p>
+                </div>
+              </div>
+            </div>
+            <div class="zone" data-index="2">
+              <div class="zone-in">
+                <div class="home-approach__text">
+                  <p>INFRA<br/>RÉSEAU</p>
+                </div>
+              </div>
+            </div>
+            <div class="zone" data-index="3">
+              <div class="zone-in">
+                <div class="home-approach__text">
+                  <p>MAIN-<br/>TENANCE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="approach-circle-center">
+            <span class="center-logo">M.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-text">
+        <div class="step active" data-step="0">
+          <h3>AUDIT & SÉCURITÉ</h3>
+          <span class="step-subtitle">Identifiez vos vulnérabilités avant qu'il ne soit trop tard</span>
+          <p>Nous réalisons des audits complets de votre infrastructure : tests d'intrusion, analyse des configurations, conformité aux bonnes pratiques. Chaque faille identifiée est une attaque évitée.</p>
+          <a href="#contact" class="btn-primary">En savoir plus</a>
+        </div>
+        <div class="step" data-step="1">
+          <h3>ADMINISTRATION SYSTÈME</h3>
+          <span class="step-subtitle">Vos serveurs et postes, gérés par des experts</span>
+          <p>Active Directory, stratégies de groupe, gestion des droits, déploiement de mises à jour — nous administrons votre parc informatique comme s'il était le nôtre.</p>
+          <a href="#contact" class="btn-primary">En savoir plus</a>
+        </div>
+        <div class="step" data-step="2">
+          <h3>INFRASTRUCTURE RÉSEAU</h3>
+          <span class="step-subtitle">Un réseau fiable, segmenté et performant</span>
+          <p>Conception et déploiement de réseaux sécurisés : VLANs, pare-feu, VPN, Wi-Fi entreprise. Du câblage physique à la configuration des switchs et routeurs.</p>
+          <a href="#contact" class="btn-primary">En savoir plus</a>
+        </div>
+        <div class="step" data-step="3">
+          <h3>MAINTENANCE</h3>
+          <span class="step-subtitle">Anticipez les pannes, pas les urgences</span>
+          <p>Supervision proactive, sauvegardes automatisées, mises à jour régulières, support réactif. Nous gardons votre infrastructure en pleine forme pour que vous puissiez vous concentrer sur votre métier.</p>
+          <a href="#contact" class="btn-primary">En savoir plus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .approach {
+    overflow: hidden;
+    padding-bottom: 128px;
+    margin: 8rem 0;
+  }
+
+  .approach .content {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .approach .content.content-title {
+    grid-template-columns: 1fr;
+    margin: 6rem 0 0;
+  }
+
+  .home-approach__title { color: var(--color-white); padding-bottom: 2rem; }
+  .approach-wrapper { display: flex; justify-content: center; }
+
+  .approach-wheel {
+    width: 650px;
+    height: 650px;
+    position: relative;
+  }
+
+  .approach-circle-zones {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    transform: rotate(45deg);
+  }
+
+  .approach-circle-active {
+    z-index: 1;
+    transition: transform 0.5s ease;
+  }
+
+  .approach-circle-active .zone {
+    background: var(--color-primary-light);
+  }
+
+  .approach-circle-active .zone.active {
+    background-color: var(--color-white);
+  }
+
+  .approach-circle-active.assess  { transform: rotate(45deg); }
+  .approach-circle-active.protect { transform: rotate(135deg); }
+  .approach-circle-active.monitor { transform: rotate(315deg); }
+  .approach-circle-active.educate { transform: rotate(225deg); }
+
+  .approach-circle-front {
+    z-index: 2;
+    transform: rotate(45deg);
+  }
+
+  .approach-circle-front .zone {
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.5s ease;
+  }
+
+  .approach-circle-front .zone.active .home-approach__text {
+    transform: scale(1);
+  }
+
+  .approach-circle-front .zone.active .home-approach__text p {
+    color: var(--color-accent);
+  }
+
+  .zone-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transform: rotate(-45deg);
+  }
+
+  .home-approach__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 200px;
+    height: 40%;
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
+  }
+
+  .home-approach__text p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-white);
+    transition: color 0.3s ease;
+  }
+
+  .approach-circle-center {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    width: 40%;
+    height: 40%;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .center-logo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .steps-text {
+    max-width: 500px;
+    min-height: 500px;
+    position: relative;
+    margin: auto;
+  }
+
+  .steps-text .step {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+  }
+
+  .steps-text .step.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+    position: relative;
+  }
+
+  .steps-text h3 { font-size: 2rem; margin-top: 0; margin-bottom: 0.5rem; }
+  .step-subtitle { display: block; font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .steps-text p { margin-bottom: 2rem; }
+
+  @media (max-width: 1200px) {
+    .approach-wheel,
+    .approach-circle-zones { width: 500px; height: 500px; }
+  }
+  @media (max-width: 900px) {
+    .approach .content { grid-template-columns: 1fr; }
+    .approach-wheel,
+    .approach-circle-zones { width: 400px; height: 400px; margin: 0 auto; }
+    .approach { padding-bottom: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .approach-wheel,
+    .approach-circle-zones { width: 300px; height: 300px; }
+    .home-approach__text { transform: scale(0.65); }
+    .home-approach__text p { font-size: 1rem; }
+  }
+</style>
+
+<script>
+  const rotations = ['assess', 'protect', 'monitor', 'educate'];
+  const frontZones = document.querySelectorAll('.approach-circle-front .zone');
+  const activeLayer = document.querySelector('.approach-circle-active');
+  const steps = document.querySelectorAll('.steps-text .step');
+
+  frontZones.forEach((zone) => {
+    zone.addEventListener('click', () => {
+      const index = parseInt(zone.getAttribute('data-index'));
+
+      frontZones.forEach(z => z.classList.remove('active'));
+      zone.classList.add('active');
+
+      activeLayer.className = 'approach-circle-zones approach-circle-active ' + rotations[index];
+
+      steps.forEach(s => s.classList.remove('active'));
+      steps[index].classList.add('active');
+    });
+  });
+</script>

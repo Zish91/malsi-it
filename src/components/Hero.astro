@@ -1,0 +1,109 @@
+<section class="homepage-title">
+  <div class="container">
+    <h1 class="home no-dot home-hero__title">
+      Votre partenaire en<br />
+      <span class="magic-text">
+        <span class="current">sécurité informatique</span>
+        <span>infrastructure réseau</span>
+        <span>administration système</span>
+        <span>maintenance IT</span>
+      </span>
+    </h1>
+
+    <div class="home-hero__text">
+      <p>Nous sécurisons et administrons l'informatique des PME et collectivités. Audit, maintenance, infrastructure — tout est couvert.</p>
+      <a href="#contact" class="btn-primary">Demander un audit gratuit</a>
+    </div>
+  </div>
+
+  <div class="scroll-more"></div>
+</section>
+
+<style>
+  .homepage-title {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home-hero__title.home {
+    font-size: 4.8rem;
+    font-weight: 700;
+    margin-top: 4rem;
+  }
+
+  .magic-text {
+    display: inline-block;
+    position: relative;
+    height: 107px;
+  }
+
+  .magic-text span {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  .magic-text span::after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-accent);
+    margin-left: 4px;
+  }
+
+  .magic-text .current {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .home-hero__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 740px;
+    margin-top: 1rem;
+  }
+
+  .home-hero__text p { margin: 0; }
+  .home-hero__text a { margin-top: 2rem; align-self: flex-start; }
+
+  .scroll-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  @media (max-width: 1200px) {
+    .home-hero__title.home { font-size: 4.4rem; }
+    .magic-text { height: auto; }
+    .magic-text span { white-space: normal !important; }
+  }
+  @media (max-width: 900px) {
+    .home-hero__title.home { font-size: 3.6rem; margin-top: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .home-hero__title.home { font-size: 2.2rem; }
+    .magic-text { height: 80px; }
+    .magic-text span::after { width: 7px; height: 7px; }
+  }
+</style>
+
+<script>
+  const magicTexts = document.querySelectorAll('.magic-text span');
+  let currentIndex = 0;
+  setInterval(() => {
+    magicTexts[currentIndex].classList.remove('current');
+    currentIndex = (currentIndex + 1) % magicTexts.length;
+    magicTexts[currentIndex].classList.add('current');
+  }, 3000);
+</script>

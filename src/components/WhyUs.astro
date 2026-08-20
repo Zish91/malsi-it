@@ -1,0 +1,52 @@
+<section class="home-why bg-white" id="apropos">
+  <div class="home-why__inner container">
+    <h2 data-sal="fade-up" class="home-why__title">Pourquoi choisir MALSI IT ?</h2>
+    <ol class="home-why__list">
+      <li class="home-why__item" data-sal="fade-up">
+        <h3 class="home-why__item-title">Réactivité terrain</h3>
+        <p class="home-why__item-text text--dark">Pas de ticket qui traîne. Nous intervenons rapidement, sur site ou à distance, pour résoudre vos problèmes avant qu'ils n'impactent votre activité.</p>
+      </li>
+      <li class="home-why__item" data-sal="fade-up">
+        <h3 class="home-why__item-title">Expertise polyvalente</h3>
+        <p class="home-why__item-text text--dark">Réseau, système, sécurité — un seul interlocuteur pour toute votre informatique. Fini les prestataires multiples qui se renvoient la balle.</p>
+      </li>
+      <li class="home-why__item" data-sal="fade-up">
+        <h3 class="home-why__item-title">Adapté aux PME</h3>
+        <p class="home-why__item-text text--dark">Des solutions dimensionnées pour votre taille et votre budget. Pas de sur-ingénierie, pas de matériel inutile — juste ce qu'il vous faut.</p>
+      </li>
+      <li class="home-why__item" data-sal="fade-up">
+        <h3 class="home-why__item-title">Transparence totale</h3>
+        <p class="home-why__item-text text--dark">Rapports clairs, recommandations expliquées, aucun jargon inutile. Vous comprenez ce qu'on fait et pourquoi on le fait.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<style>
+  .home-why__title { color: var(--color-text-dark); margin: 0; padding-bottom: 2rem; }
+
+  .home-why__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .home-why__item {
+    background: radial-gradient(circle, #fff 0%, rgba(235,235,235,0.3) 100%);
+    border: 1px solid #e2e2e2;
+    border-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-why__item-title { color: var(--color-text-dark); margin: 0.5rem 0 1rem; }
+  .home-why__item-text { color: rgba(10,14,42,0.6); margin: 0; }
+
+  @media (max-width: 900px) {
+    .home-why__list { grid-template-columns: 1fr; gap: 1rem; }
+  }
+</style>
