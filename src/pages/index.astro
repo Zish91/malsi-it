@@ -1,308 +1,864 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-content">
-      <span class="hero-badge">Sécurité · Infrastructure · Maintenance</span>
-      <h1>Votre réseau,<br><span class="highlight">sécurisé et maîtrisé.</span></h1>
-      <p class="hero-text">
-        MALSI IT accompagne les PME et collectivités dans la sécurisation, 
-        l'administration et la maintenance de leurs infrastructures informatiques.
-      </p>
-      <div class="hero-buttons">
-        <a href="/contact" class="btn btn-primary">Diagnostic gratuit →</a>
-        <a href="#services" class="btn btn-outline">Nos services</a>
+<BaseLayout>
+  <!-- Cercles décoratifs -->
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="homepage-title">
+    <div class="container">
+      <h1 class="home no-dot home-hero__title">
+        Votre partenaire en<br />
+        <span class="magic-text">
+          <span class="current">sécurité informatique.</span>
+          <span>infrastructure réseau.</span>
+          <span>administration système.</span>
+          <span>maintenance IT.</span>
+        </span>
+      </h1>
+
+      <div class="home-hero__text">
+        <p>Nous sécurisons et administrons l'informatique des PME et collectivités. Audit, maintenance, infrastructure — tout est couvert.</p>
+        <a href="#contact" class="btn-primary">Demander un audit gratuit</a>
       </div>
-      <div class="hero-tags">
-        <span class="tag">Cisco</span>
-        <span class="tag">Windows Server</span>
-        <span class="tag">Linux</span>
-        <span class="tag">Active Directory</span>
-        <span class="tag">Firewall</span>
+    </div>
+
+    <div class="scroll-more"></div>
+  </section>
+
+  <!-- ============================================
+  <!-- ============================================
+       STATS
+       ============================================ -->
+  <section class="home-stats bg-gray">
+    <div class="home-stats__inner container">
+      <div class="home-stats__texts">
+        <h2 data-sal="fade-up">Ces chiffres font peur.<br/>Les nôtres rassurent.</h2>
+        <p class="text--dark">Les entreprises accompagnées par un prestataire IT réduisent leurs incidents de 70%, divisent par 3 leur temps d'arrêt, et dorment tranquilles.</p>
+        <p class="text--dark">MALSI IT vous accompagne de l'audit initial à la maintenance quotidienne — pour que ces statistiques ne soient jamais les vôtres.</p>
+        <a href="#contact" class="btn-primary" style="margin-top: 2rem;">Protégez votre entreprise</a>
+      </div>
+      <div class="home-stats__stats">
+        <div class="home-stats__item">
+          <dotlottie-player src="/lottie/90.json" background="transparent" speed="1" style="width:48px;height:48px;" loop autoplay></dotlottie-player>
+          <div class="home-stats__number-row">
+            <span class="home-stats__number" data-target="90">0</span>
+            <span class="home-stats__suffix">%</span>
+          </div>
+          <span class="home-stats__number-text">des cyberattaques ciblent les entreprises de -250 salariés</span>
+        </div>
+        <div class="home-stats__item home-stats__item--positive">
+          <dotlottie-player src="/lottie/85.json" background="transparent" speed="1" style="width:48px;height:48px;" loop autoplay></dotlottie-player>
+          <div class="home-stats__number-row">
+            <span class="home-stats__number" data-target="85">0</span>
+            <span class="home-stats__suffix">%</span>
+          </div>
+          <span class="home-stats__number-text">des incidents évités grâce à une maintenance proactive</span>
+        </div>
+        <div class="home-stats__item">
+          <dotlottie-player src="/lottie/43.json" background="transparent" speed="1" style="width:48px;height:48px;" loop autoplay></dotlottie-player>
+          <div class="home-stats__number-row">
+            <span class="home-stats__number" data-target="43">0</span>
+            <span class="home-stats__suffix">%</span>
+          </div>
+          <span class="home-stats__number-text">des PME victimes d'une attaque cessent leur activité</span>
+        </div>
+        <div class="home-stats__item home-stats__item--positive">
+          <dotlottie-player src="/lottie/70.json" background="transparent" speed="1" style="width:48px;height:48px;" loop autoplay></dotlottie-player>
+          <div class="home-stats__number-row">
+            <span class="home-stats__number" data-target="70">0</span>
+            <span class="home-stats__suffix">%</span>
+          </div>
+          <span class="home-stats__number-text">de réduction des pannes avec un prestataire IT régulier</span>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- SERVICES ROUE -->
+       APPROACH — LA ROUE
+       ============================================ -->
   <section class="approach" id="services">
     <div class="container">
       <div class="content content-title">
-        <h2 class="home-approach__title">Comment nous protégeons votre infrastructure</h2>
+        <h2 data-sal="fade-up" class="title-text home-approach__title">Comment nous protégeons votre entreprise</h2>
       </div>
+
       <div class="content">
-        <div class="approach-">
-          <!-- Couche 1 : icônes + labels (cliquables) -->
-          <div class="approach-circle-zones">
-            <div class="zone zone-1 active" data-index="0" data-rotate="audit">
-              <div class="zone-in">
-                <div class="home-approach__text">
-                  <div class="imgs">
-                    <svg class="light" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#150d60" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <!-- Colonne roue -->
+        <div class="approach-wrapper">
+          <div class="approach-wheel">
+            <!-- Couche 1 : fond actif (tourne) — Z-INDEX 1 -->
+            <div class="approach-circle-zones approach-circle-active assess">
+              <div class="zone active"></div>
+              <div class="zone"></div>
+              <div class="zone"></div>
+              <div class="zone"></div>
+            </div>
+
+            <!-- Couche 2 : zones cliquables avec texte — Z-INDEX 2 -->
+            <div class="approach-circle-zones approach-circle-front">
+              <div class="zone active" data-index="0">
+                <div class="zone-in">
+                  <div class="home-approach__text">
+                    <p>AUDIT &<br/>SÉCURITÉ</p>
                   </div>
-                  <p>AUDIT</p>
+                </div>
+              </div>
+              <div class="zone" data-index="1">
+                <div class="zone-in">
+                  <div class="home-approach__text">
+                    <p>ADMIN<br/>SYSTÈME</p>
+                  </div>
+                </div>
+              </div>
+              <div class="zone" data-index="2">
+                <div class="zone-in">
+                  <div class="home-approach__text">
+                    <p>INFRA<br/>RÉSEAU</p>
+                  </div>
+                </div>
+              </div>
+              <div class="zone" data-index="3">
+                <div class="zone-in">
+                  <div class="home-approach__text">
+                    <p>MAIN-<br/>TENANCE</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="zone zone-2" data-index="1" data-rotate="admin">
-              <div class="zone-in">
-                <div class="home-approach__text">
-                  <div class="imgs">
-                    <svg class="light" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#150d60" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                  </div>
-                  <p>ADMIN</p>
-                </div>
-              </div>
-            </div>
-            <div class="zone zone-3" data-index="2" data-rotate="maintenance">
-              <div class="zone-in">
-                <div class="home-approach__text">
-                  <div class="imgs">
-                    <svg class="light" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#150d60" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                  </div>
-                  <p>MAINTENANCE</p>
-                </div>
-              </div>
-            </div>
-            <div class="zone zone-4" data-index="3" data-rotate="reseau">
-              <div class="zone-in">
-                <div class="home-approach__text">
-                  <div class="imgs">
-                    <svg class="light" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#150d60" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                  </div>
-                  <p>RÉSEAU</p>
-                </div>
-              </div>
+
+            <!-- Centre -->
+            <div class="approach-circle-center">
+              <span class="center-logo">M.</span>
             </div>
           </div>
-
-          <!-- Couche 2 : spotlight blanc (tourne) -->
-          <div class="approach-circle-zones approach-circle-active audit">
-            <div class="zone zone-1 active"></div>
-            <div class="zone zone-2"></div>
-            <div class="zone zone-3"></div>
-            <div class="zone zone-4"></div>
-          </div>
-
-          <!-- Centre -->
-          <div class="approach-circle-center"></div>
         </div>
 
-        <!-- DETAIL -->
+        <!-- Colonne texte -->
         <div class="steps-text">
-          <div class="step step-1" style="display:block;" data-step="0">
-            <h3 class="home-approach__item-title">AUDIT & SÉCURITÉ</h3>
-            <span class="home-approach__item-subtitle">Identifiez vos failles avant qu'elles ne soient exploitées</span>
-            <p class="text text--light home-approach__item-text">On analyse votre infrastructure de A à Z, on détecte les vulnérabilités et on met en place un plan de remédiation adapté à votre activité et votre budget.</p>
-            <a href="/services" class="cresco-button"><span>EN SAVOIR PLUS</span></a>
+          <div class="step active" data-step="0">
+            <h3>AUDIT & SÉCURITÉ</h3>
+            <span class="step-subtitle">Identifiez vos vulnérabilités avant qu'il ne soit trop tard</span>
+            <p>Nous réalisons des audits complets de votre infrastructure : tests d'intrusion, analyse des configurations, conformité aux bonnes pratiques. Chaque faille identifiée est une attaque évitée.</p>
+            <a href="#contact" class="btn-primary">En savoir plus</a>
           </div>
-          <div class="step step-2" style="display:none;" data-step="1">
-            <h3 class="home-approach__item-title">ADMINISTRATION SYSTÈMES</h3>
-            <span class="home-approach__item-subtitle">Vos systèmes gérés par un expert, pas par le hasard</span>
-            <p class="text text--light home-approach__item-text">Active Directory, GPO, serveurs Windows et Linux, DNS, DHCP — on administre votre SI pour que votre équipe puisse travailler sans friction.</p>
-            <a href="/services" class="cresco-button"><span>EN SAVOIR PLUS</span></a>
+          <div class="step" data-step="1">
+            <h3>ADMINISTRATION SYSTÈME</h3>
+            <span class="step-subtitle">Vos serveurs et postes, gérés par des experts</span>
+            <p>Active Directory, stratégies de groupe, gestion des droits, déploiement de mises à jour — nous administrons votre parc informatique comme s'il était le nôtre.</p>
+            <a href="#contact" class="btn-primary">En savoir plus</a>
           </div>
-          <div class="step step-3" style="display:none;" data-step="2">
-            <h3 class="home-approach__item-title">MAINTENANCE & SUPPORT</h3>
-            <span class="home-approach__item-subtitle">Prévenir plutôt que guérir, intervenir avant la panne</span>
-            <p class="text text--light home-approach__item-text">Maintenance préventive, supervision réseau, mises à jour et correctifs. On surveille et on intervient — sur site ou à distance — avant que ça tombe.</p>
-            <a href="/services" class="cresco-button"><span>EN SAVOIR PLUS</span></a>
+          <div class="step" data-step="2">
+            <h3>INFRASTRUCTURE RÉSEAU</h3>
+            <span class="step-subtitle">Un réseau fiable, segmenté et performant</span>
+            <p>Conception et déploiement de réseaux sécurisés : VLANs, pare-feu, VPN, Wi-Fi entreprise. Du câblage physique à la configuration des switchs et routeurs.</p>
+            <a href="#contact" class="btn-primary">En savoir plus</a>
           </div>
-          <div class="step step-4" style="display:none;" data-step="3">
-            <h3 class="home-approach__item-title">INFRASTRUCTURE RÉSEAU</h3>
-            <span class="home-approach__item-subtitle">Un réseau solide, pensé pour évoluer avec vous</span>
-            <p class="text text--light home-approach__item-text">Architecture LAN/WAN, Wi-Fi, VPN, firewall, switches et routeurs Cisco, segmentation VLAN. Du câble au cloud, on construit des réseaux fiables.</p>
-            <a href="/services" class="cresco-button"><span>EN SAVOIR PLUS</span></a>
+          <div class="step" data-step="3">
+            <h3>MAINTENANCE</h3>
+            <span class="step-subtitle">Anticipez les pannes, pas les urgences</span>
+            <p>Supervision proactive, sauvegardes automatisées, mises à jour régulières, support réactif. Nous gardons votre infrastructure en pleine forme pour que vous puissiez vous concentrer sur votre métier.</p>
+            <a href="#contact" class="btn-primary">En savoir plus</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-</Layout>
+
+  <!-- ============================================
+       WHY CHOOSE US
+       ============================================ -->
+  <section class="home-why bg-white" id="apropos">
+    <div class="home-why__inner container">
+      <h2 data-sal="fade-up" class="home-why__title">Pourquoi choisir MALSI IT ?</h2>
+      <ol class="home-why__list">
+        <li class="home-why__item" data-sal="fade-up">
+          <h3 class="home-why__item-title">Réactivité terrain</h3>
+          <p class="home-why__item-text text--dark">Pas de ticket qui traîne. Nous intervenons rapidement, sur site ou à distance, pour résoudre vos problèmes avant qu'ils n'impactent votre activité.</p>
+        </li>
+        <li class="home-why__item" data-sal="fade-up">
+          <h3 class="home-why__item-title">Expertise polyvalente</h3>
+          <p class="home-why__item-text text--dark">Réseau, système, sécurité — un seul interlocuteur pour toute votre informatique. Fini les prestataires multiples qui se renvoient la balle.</p>
+        </li>
+        <li class="home-why__item" data-sal="fade-up">
+          <h3 class="home-why__item-title">Adapté aux PME</h3>
+          <p class="home-why__item-text text--dark">Des solutions dimensionnées pour votre taille et votre budget. Pas de sur-ingénierie, pas de matériel inutile — juste ce qu'il vous faut.</p>
+        </li>
+        <li class="home-why__item" data-sal="fade-up">
+          <h3 class="home-why__item-title">Transparence totale</h3>
+          <p class="home-why__item-text text--dark">Rapports clairs, recommandations expliquées, aucun jargon inutile. Vous comprenez ce qu'on fait et pourquoi on le fait.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BLOG
+       ============================================ -->
+  <section class="home-blog bg-white">
+    <div class="home-blog__inner container">
+      <h2 data-sal="fade-up" class="home-blog__title">Derniers articles</h2>
+      <div class="blog-grid">
+        <a href="#" class="blog-post-item" data-sal="fade-up">
+          <div class="blog-post-item__thumbnail-placeholder">
+            <span>SÉCURITÉ</span>
+          </div>
+          <div class="blog-post-item__inner">
+            <div class="blog-post-item__meta">
+              <span class="blog-post-item__category">Cybersécurité</span>
+              <span class="blog-post-item__date">2025</span>
+            </div>
+            <h3 class="blog-post-item__title">PME : 5 failles que les hackers exploitent en priorité</h3>
+            <p class="blog-post-item__description text--dark">Mots de passe faibles, mises à jour ignorées, accès non restreints… Tour d'horizon des vulnérabilités les plus courantes.</p>
+          </div>
+          <div class="blog-post-item__background"></div>
+        </a>
+
+        <a href="#" class="blog-post-item" data-sal="fade-up">
+          <div class="blog-post-item__thumbnail-placeholder">
+            <span>RÉSEAU</span>
+          </div>
+          <div class="blog-post-item__inner">
+            <div class="blog-post-item__meta">
+              <span class="blog-post-item__category">Infrastructure</span>
+              <span class="blog-post-item__date">2025</span>
+            </div>
+            <h3 class="blog-post-item__title">Pourquoi segmenter son réseau est indispensable</h3>
+            <p class="blog-post-item__description text--dark">VLANs, pare-feu interne, isolation des postes : les bases d'un réseau qui limite la propagation des menaces.</p>
+          </div>
+          <div class="blog-post-item__background"></div>
+        </a>
+
+        <a href="#" class="blog-post-item" data-sal="fade-up">
+          <div class="blog-post-item__thumbnail-placeholder">
+            <span>SYSTÈME</span>
+          </div>
+          <div class="blog-post-item__inner">
+            <div class="blog-post-item__meta">
+              <span class="blog-post-item__category">Administration</span>
+              <span class="blog-post-item__date">2025</span>
+            </div>
+            <h3 class="blog-post-item__title">Active Directory : les erreurs de config qui coûtent cher</h3>
+            <p class="blog-post-item__description text--dark">GPO mal appliquées, comptes orphelins, droits trop larges — les pièges classiques d'un AD mal géré.</p>
+          </div>
+          <div class="blog-post-item__background"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT
+       ============================================ -->
+  <section class="home-contact bg-white" id="contact">
+    <h2 data-sal="fade-up" class="home-contact__title">Sécurisons votre entreprise</h2>
+    <p class="home-contact__subtitle text--dark">Vous souhaitez évaluer votre infrastructure, obtenir un accompagnement ou simplement poser une question ? Parlons-en.</p>
+
+    <form class="home-contact__form form-dark" action="https://formsubmit.co/contact@malsi-it.fr" method="POST">
+      <input type="hidden" name="_subject" value="Nouveau contact MALSI IT" />
+      <input type="hidden" name="_captcha" value="false" />
+
+      <div class="ligne">
+        <input type="text" name="name" id="name" required />
+        <label for="name">Nom complet</label>
+      </div>
+      <div class="ligne">
+        <input type="email" name="email" id="email" required />
+        <label for="email">Email</label>
+      </div>
+      <div class="ligne">
+        <input type="text" name="company" id="company" />
+        <label for="company">Entreprise</label>
+      </div>
+      <div class="ligne ligne-textarea">
+        <textarea name="message" id="message" required></textarea>
+        <label for="message">Message</label>
+      </div>
+      <div class="ligne">
+        <button type="submit" class="btn-primary">Envoyer</button>
+      </div>
+    </form>
+  </section>
+
+</BaseLayout>
 
 <style>
-  /* ===== HERO ===== */
-  .hero { padding: 8rem 1.5rem 5rem; background: var(--bg-alt); text-align: center; }
-  .hero-content { max-width: 750px; margin: 0 auto; }
-  .hero-badge { display: inline-block; background: var(--green-light); color: var(--green); font-weight: 600; font-size: 0.85rem; padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.5rem; }
-  h1 { font-size: 3.2rem; font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 1.5rem; }
-  .highlight { color: var(--accent); }
-  .hero-text { font-size: 1.15rem; color: var(--text-light); max-width: 580px; margin: 0 auto 2rem; line-height: 1.8; }
-  .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
-  .hero-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-  .tag { background: var(--bg-white); border: 1px solid var(--border); color: var(--slate); font-size: 0.8rem; font-weight: 500; padding: 0.35rem 0.85rem; border-radius: 6px; }
+  /* ============================================
+     HERO
+     ============================================ */
+  .homepage-title {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
 
-  /* ===== APPROACH — EXACT CRESCO CSS ===== */
-  .approach { overflow: hidden; padding-bottom: 128px; background-color: #150d60; color: #fff; padding-top: 0; }
-  .approach p { max-width: 100%; }
+  .home-hero__title.home {
+    font-size: 4.8rem;
+    font-weight: 700;
+    margin-top: 4rem;
+  }
 
-  .approach .content.content-title { grid-template-columns: 1fr; margin: 6rem 0 0; }
-  .home-approach__title { padding-bottom: 2rem; color: #fff; font-size: 2rem; font-weight: 700; }
+  .magic-text {
+    display: inline-block;
+    position: relative;
+    height: 107px;
+  }
 
-  .approach .approach- { height: 650px; position: relative; width: 650px; }
+  .magic-text span {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
 
-  .approach .approach-circle-zones {
+  .magic-text span::after {
+    content: "";
+    color: var(--color-accent);
+  }
+
+  .magic-text .current {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .home-hero__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 740px;
+    margin-top: 1rem;
+  }
+
+  .home-hero__text p { margin: 0; }
+  .home-hero__text a { margin-top: 2rem; align-self: flex-start; }
+
+  @media (max-width: 1200px) {
+    .home-hero__title.home { font-size: 4.4rem; }
+    .magic-text { height: auto; }
+    .magic-text span { white-space: normal !important; }
+  }
+  @media (max-width: 900px) {
+    .home-hero__title.home { font-size: 3.6rem; margin-top: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .home-hero__title.home { font-size: 2.2rem; }
+    .magic-text { height: 80px; }
+  }
+
+  /* ============================================
+     STATS
+     ============================================ */
+  .home-stats__inner {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: center;
+    padding: 6rem 20px;
+  }
+
+  .home-stats__texts { grid-column: 1 / 7; }
+  .home-stats__texts h2 { color: var(--color-text-dark); margin-bottom: 1.5rem; }
+  .home-stats__texts p { color: rgba(10, 14, 42, 0.6); margin: 0; padding-right: 2rem; }
+  .home-stats__texts p + p { margin-top: 0.5rem; }
+
+  .home-stats__stats {
+    grid-column: 7 / 11;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .home-stats__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    text-align: center;
+    gap: 0.3rem;
+  }
+
+  .home-stats__item:nth-child(2) { grid-row: span 2; justify-content: center; }
+  .home-stats__number { font-size: 2.8rem; font-weight: 700; color: var(--color-primary); display: inline; }
+  .home-stats__suffix { font-size: 1.6rem; font-weight: 600; color: var(--color-primary); }
+  .home-stats__number-text { color: rgba(10, 14, 42, 0.7); font-size: 0.85rem; }
+
+  @media (max-width: 900px) {
+    .home-stats__texts { grid-column: 1 / 11; padding-right: 0; }
+    .home-stats__stats { grid-column: 1 / 11; gap: 1rem; }
+    .home-stats__number { font-size: 2rem; }
+  }
+
+  /* ============================================
+     APPROACH — ROUE (copie exacte Cresco)
+     ============================================ */
+  .approach {
+    overflow: hidden;
+    padding-bottom: 128px;
+    margin: 8rem 0;
+  }
+
+  .approach .content {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .approach .content.content-title {
+    grid-template-columns: 1fr;
+    margin: 6rem 0 0;
+  }
+
+  .home-approach__title { color: var(--color-white); padding-bottom: 2rem; }
+
+  .approach-wrapper { display: flex; justify-content: center; }
+
+  /* Le conteneur de la roue */
+  .approach-wheel {
+    width: 650px;
+    height: 650px;
+    position: relative;
+  }
+
+  /* Styles communs aux deux couches de zones */
+  .approach-circle-zones {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 650px;
+    height: 650px;
     border-radius: 50%;
-    inset: 0;
+    overflow: hidden;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
-    height: 650px;
-    overflow: hidden;
-    position: absolute;
     transform: rotate(45deg);
-    width: 650px;
-    z-index: 2;
   }
 
-  .approach .approach-circle-zones .zone { cursor: pointer; overflow: hidden; transition: background 0.5s; }
-  .approach .approach-circle-zones .zone.active { color: var(--accent); }
-  .approach .approach-circle-zones .zone.active .home-approach__text { transform: scale(1); }
-  .approach .approach-circle-zones .zone.active .home-approach__text .light { opacity: 1; }
-  .approach .approach-circle-zones .zone.active .home-approach__text .dark { opacity: 0; }
+  /* Couche arrière : fond coloré qui tourne */
+  .approach-circle-active {
+    z-index: 1;
+    transition: transform 0.5s ease;
+  }
 
-  .approach .approach-circle-zones .zone-in {
-    align-items: center;
+  .approach-circle-active .zone {
+    background: var(--color-primary-light);
+  }
+
+  .approach-circle-active .zone.active {
+    background-color: var(--color-white);
+  }
+
+  /* Rotations par état */
+  .approach-circle-active.assess  { transform: rotate(45deg); }
+  .approach-circle-active.protect { transform: rotate(135deg); }
+  .approach-circle-active.educate { transform: rotate(225deg); }
+  .approach-circle-active.monitor { transform: rotate(315deg); }
+
+  /* Couche avant : zones cliquables transparentes avec texte */
+  .approach-circle-front {
+    z-index: 2;
+    transform: rotate(45deg); /* fixe, ne bouge jamais */
+  }
+
+  .approach-circle-front .zone {
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.5s ease;
+  }
+
+  .approach-circle-front .zone.active .home-approach__text {
+    transform: scale(1);
+  }
+
+  .approach-circle-front .zone.active .home-approach__text p {
+    color: var(--color-accent);
+  }
+
+  .zone-in {
     display: flex;
-    height: 100%;
+    align-items: center;
     justify-content: center;
+    height: 100%;
     transform: rotate(-45deg);
   }
 
-  .approach .home-approach__text {
-    align-items: center;
+  .home-approach__text {
     display: flex;
     flex-direction: column;
-    height: 40%;
+    align-items: center;
     justify-content: center;
     text-align: center;
-    transform: scale(0.8);
-    transition: transform 0.5s;
     width: 200px;
+    height: 40%;
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
   }
 
-  .approach .home-approach__text .imgs { height: 80px; margin: auto; position: relative; width: 80px; }
-  .approach .home-approach__text .imgs svg { height: 100%; left: 0; object-fit: contain; position: absolute; top: 0; transition: opacity 0.3s; width: 100%; }
-  .approach .home-approach__text .light { opacity: 0; }
-  .approach .home-approach__text .dark { opacity: 1; }
-  .approach .home-approach__text p { font-size: 1.4rem; margin-bottom: 0; font-weight: 700; letter-spacing: 1px; }
-
-  /* Couche active — TOURNE */
-  .approach .approach-circle-active { transform: rotate(45deg); transition: transform 0.5s; z-index: 1 !important; }
-  .approach .approach-circle-active .zone { background: rgb(24, 15, 109); cursor: default; }
-  .approach .approach-circle-active .zone.active { background-color: #fff; }
-
-  /* Rotations par service */
-  .approach .approach-circle-active.audit { transform: rotate(45deg); }
-  .approach .approach-circle-active.admin { transform: rotate(135deg); }
-  .approach .approach-circle-active.maintenance { transform: rotate(225deg); }
-  .approach .approach-circle-active.reseau { transform: rotate(315deg); }
+  .home-approach__text p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-white);
+    transition: color 0.3s ease;
+  }
 
   /* Centre */
-  .approach .approach-circle-center {
-    background-color: #150d60;
-    border-radius: 50%;
-    inset: 0;
-    height: 40%;
-    margin: auto;
+  .approach-circle-center {
     position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
     width: 40%;
+    height: 40%;
+    background-color: var(--color-primary);
+    border-radius: 50%;
     z-index: 3;
-    border: 4px solid var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .approach .approach-circle-center::after {
-    content: 'M.';
+  .center-logo {
     font-size: 4rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--color-white);
   }
 
-  /* Grid content */
-  .approach .content { gap: 1rem; align-items: center; display: grid; grid-template-columns: 60% 1fr; margin-bottom: 3rem; }
-
-  /* Steps texte */
-  .approach .steps-text { margin: auto; max-width: 500px; min-height: 500px; position: relative; display: flex; align-items: center; }
-  .approach .steps-text .step { position: absolute; }
-
-  .home-approach__item-title { color: #fff; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 1px; }
-  .home-approach__item-subtitle { display: block; font-size: 1.05rem; font-weight: 600; color: rgba(255, 255, 255, 0.85); margin-bottom: 1rem; }
-  .home-approach__item-text { font-size: 0.95rem; color: rgba(255, 255, 255, 0.55); line-height: 1.8; margin-bottom: 2rem; }
-
-  .cresco-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: var(--accent);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    border-radius: 6px;
-    transition: background 0.3s;
-    font-family: var(--font);
+  /* Texte à droite de la roue */
+  .steps-text {
+    max-width: 500px;
+    min-height: 500px;
+    position: relative;
+    margin: auto;
   }
-  .cresco-button:hover { background: var(--accent-hover); }
 
-  /* Steps animation */
-  .step-enter-active, .step-leave-active { transition: opacity 0.5s, transform 0.5s; }
-  .step-enter, .step-leave-to { opacity: 0; transform: scale(0.9); }
+  .steps-text .step {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+  }
 
-  /* ===== RESPONSIVE ===== */
+  .steps-text .step.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+    position: relative;
+  }
+
+  .steps-text h3 { font-size: 2rem; margin-top: 0; margin-bottom: 0.5rem; }
+  .step-subtitle { display: block; font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+  .steps-text p { margin-bottom: 2rem; }
+
   @media (max-width: 1200px) {
-    .approach .approach-, .approach .approach-circle-zones { height: 500px; margin: auto; width: 500px; }
+    .approach-wheel,
+    .approach-circle-zones { width: 500px; height: 500px; }
   }
   @media (max-width: 900px) {
     .approach .content { grid-template-columns: 1fr; }
+    .approach-wheel,
+    .approach-circle-zones { width: 400px; height: 400px; margin: 0 auto; }
     .approach { padding-bottom: 2rem; }
   }
-  @media (max-width: 768px) {
-    .hero { padding: 6rem 1rem 3.5rem; }
-    h1 { font-size: 2.2rem; }
-    .hero-text { font-size: 1rem; }
-  }
   @media (max-width: 600px) {
-    .approach .approach-, .approach .approach-circle-zones { height: 400px; width: 400px; }
-    .approach .approach-circle-zones .home-approach__text { transform: scale(0.7); }
-    .approach .approach-circle-zones .home-approach__text .imgs { display: none; }
-    .approach .approach-circle-zones .zone.active .home-approach__text { transform: scale(0.8); }
+    .approach-wheel,
+    .approach-circle-zones { width: 300px; height: 300px; }
+    .home-approach__text { transform: scale(0.65); }
+    .home-approach__text p { font-size: 1rem; }
   }
-  @media (max-width: 450px) {
-    .approach .approach-, .approach .approach-circle-zones { height: 300px; width: 300px; }
+
+  /* ============================================
+     WHY CHOOSE US
+     ============================================ */
+  .home-why__title { color: var(--color-text-dark); margin: 0; padding-bottom: 2rem; }
+
+  .home-why__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .home-why__item {
+    background: radial-gradient(circle, #fff 0%, rgba(235,235,235,0.3) 100%);
+    border: 1px solid #e2e2e2;
+    border-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-why__item-title { color: var(--color-text-dark); margin: 0.5rem 0 1rem; }
+  .home-why__item-text { color: rgba(10,14,42,0.6); margin: 0; }
+
+  @media (max-width: 900px) {
+    .home-why__list { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
+  /* ============================================
+     BLOG
+     ============================================ */
+  .home-blog__title {
+    color: var(--color-text-dark);
+    margin: 0;
+    padding-bottom: 2rem;
+  }
+
+  .home-blog__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 32px;
+    width: 100%;
+  }
+
+  .blog-post-item {
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    max-width: 372px;
+    width: 100%;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    outline: 1px solid #efefef;
+    transition: color 0.3s ease;
+  }
+
+  .blog-post-item:hover {
+    color: var(--color-text-dark);
+    text-decoration: none;
+  }
+
+  .blog-post-item:hover .blog-post-item__title {
+    border-top-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .blog-post-item:hover .blog-post-item__category::before {
+    background: var(--color-primary);
+  }
+
+  .blog-post-item__thumbnail-placeholder {
+    height: 210px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .blog-post-item__thumbnail-placeholder span {
+    color: var(--color-white);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    opacity: 0.5;
+  }
+
+  .blog-post-item__inner {
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .blog-post-item__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .blog-post-item__category {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-text-dark);
+  }
+
+  .blog-post-item__category::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: var(--color-primary);
+    transition: background 0.2s ease;
+  }
+
+  .blog-post-item__date {
+    color: rgba(10,14,42,0.5);
+  }
+
+  .blog-post-item__title {
+    border-top: 2px solid var(--color-primary);
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    color: var(--color-text-dark);
+    transition: border-top-color 0.2s ease, color 0.2s ease;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .blog-post-item__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* Hover : fond qui monte (comme Cresco) */
+  .blog-post-item__background {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 500px 500px 0 0;
+    top: 100%;
+    transition: top 0.2s ease;
+  }
+
+  @media (min-width: 900px) {
+    .blog-post-item:hover { color: var(--color-white); }
+    .blog-post-item:hover .text--dark { color: var(--color-white); }
+    .blog-post-item:hover .blog-post-item__background { top: 0; }
+    .blog-post-item:hover .blog-post-item__category::before { background: var(--color-white); }
+    .blog-post-item:hover .blog-post-item__title { border-top-color: var(--color-white); color: var(--color-white); }
+    .blog-post-item:hover .blog-post-item__description { color: rgba(255,255,255,0.8); }
+    .blog-post-item:hover .blog-post-item__category { color: var(--color-white); }
+    .blog-post-item:hover .blog-post-item__date { color: rgba(255,255,255,0.6); }
+  }
+
+  @media (max-width: 1200px) {
+    .blog-grid {
+      display: flex;
+      gap: 1rem;
+      overflow-x: scroll;
+    }
+    .blog-grid * { flex-shrink: 0; }
+  }
+
+  /* ============================================
+     CONTACT
+     ============================================ */
+  .home-contact { display: flex; flex-direction: column; align-items: center; }
+  .home-contact__title { color: var(--color-text-dark); text-align: center; margin: 0; padding-bottom: 1rem; }
+  .home-contact__subtitle { text-align: center; max-width: 600px; margin: 0 auto 2rem; }
+
+  .home-contact__form {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0 20px;
+  }
+
+  .home-contact__form button[type="submit"] {
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    width: auto;
+  }
+
+  @media (max-width: 900px) {
+    .home-contact { padding-left: 1rem; padding-right: 1rem; }
   }
 </style>
 
 <script>
-  const zones = document.querySelectorAll('.approach-circle-zones:not(.approach-circle-active) .zone');
+  // ============================================
+  // ROTATING HERO TEXT
+  // ============================================
+  const magicTexts = document.querySelectorAll('.magic-text span');
+  let currentIndex = 0;
+
+  setInterval(() => {
+    magicTexts[currentIndex].classList.remove('current');
+    currentIndex = (currentIndex + 1) % magicTexts.length;
+    magicTexts[currentIndex].classList.add('current');
+  }, 3000);
+
+  // ============================================
+  // ANIMATED COUNTERS
+  // ============================================
+  const counters = document.querySelectorAll('.home-stats__number[data-target]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = parseInt(entry.target.getAttribute('data-target'));
+        let count = 0;
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        const updateCount = () => {
+          count += increment;
+          if (count < target) {
+            entry.target.textContent = Math.floor(count);
+            requestAnimationFrame(updateCount);
+          } else {
+            entry.target.textContent = target;
+          }
+        };
+        updateCount();
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ============================================
+  // WHEEL INTERACTION (corrigé)
+  // ============================================
+  // Mapping : index 0=top, 1=right, 2=left, 3=bottom
+  const rotations = ['assess', 'protect', 'monitor', 'educate'];
+  const frontZones = document.querySelectorAll('.approach-circle-front .zone');
   const activeLayer = document.querySelector('.approach-circle-active');
-  const steps = document.querySelectorAll('.step');
+  const steps = document.querySelectorAll('.steps-text .step');
 
-  // Mapping index → classe de rotation
-  const rotateClasses = ['audit', 'admin', 'maintenance', 'reseau'];
-
-  zones.forEach((zone) => {
+  frontZones.forEach((zone) => {
     zone.addEventListener('click', () => {
-      const index = parseInt(zone.dataset.index);
-      const rotateName = zone.dataset.rotate;
+      const index = parseInt(zone.getAttribute('data-index'));
 
-      // Reset zones actives
-      zones.forEach(z => z.classList.remove('active'));
+      // 1. Active state sur les zones cliquables (front)
+      frontZones.forEach(z => z.classList.remove('active'));
       zone.classList.add('active');
 
-      // Rotation du spotlight
-      activeLayer.className = 'approach-circle-zones approach-circle-active ' + rotateName;
+      // 2. Tourner la couche active — zone-1 reste TOUJOURS blanche
+      //    C'est la rotation qui la positionne sous la bonne zone
+      activeLayer.className = 'approach-circle-zones approach-circle-active ' + rotations[index];
 
-      // Swap texte
-      steps.forEach(s => s.style.display = 'none');
-      steps[index].style.display = 'block';
+      // 3. Changer le texte à droite
+      steps.forEach(s => s.classList.remove('active'));
+      steps[index].classList.add('active');
     });
   });
 </script>
