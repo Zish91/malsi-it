@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} — MALSI IT`} description={post.data.description}>
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <article class="blog-article">
+    <div class="container">
+      <div class="blog-article__header">
+        <a href="/blog" class="blog-article__back">← Retour au blog</a>
+        <div class="blog-article__meta">
+          <span class="blog-article__category">{post.data.category}</span>
+          <span class="blog-article__date">{new Date(post.data.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        </div>
+        <h1 class="no-dot">{post.data.title}</h1>
+        <p class="blog-article__description">{post.data.description}</p>
+      </div>
+
+      <div class="blog-article__content">
+        <Content />
+      </div>
+
+      <div class="blog-article__cta">
+        <h2 class="no-dot">Besoin d'un accompagnement ?</h2>
+        <p>Nos experts sont là pour sécuriser et gérer votre infrastructure.</p>
+        <a href="/#contact" class="btn-primary">Contactez-nous</a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .blog-article {
+    padding: 8rem 0 4rem;
+    margin: 0;
+  }
+
+  .blog-article__header {
+    max-width: 800px;
+    margin-bottom: 3rem;
+  }
+
+  .blog-article__back {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .blog-article__back:hover { color: var(--color-white); }
+
+  .blog-article__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .blog-article__category {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .blog-article__date { color: rgba(255, 255, 255, 0.5); }
+
+  .blog-article__header h1 { font-size: 3rem; margin-top: 0; }
+
+  .blog-article__description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 1rem;
+  }
+
+  .blog-article__content {
+    max-width: 800px;
+    padding: 3rem 0;
+  }
+
+  .blog-article__content :global(h2) {
+    color: var(--color-white);
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-article__content :global(h3) {
+    color: var(--color-white);
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-article__content :global(p) {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-article__content :global(strong) {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .blog-article__content :global(ul),
+  .blog-article__content :global(ol) {
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-article__content :global(li) {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .blog-article__cta {
+    max-width: 800px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 3rem;
+    margin-top: 2rem;
+  }
+
+  .blog-article__cta h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .blog-article__cta p { margin-bottom: 2rem; }
+
+  @media (max-width: 600px) {
+    .blog-article__header h1 { font-size: 2rem; }
+  }
+</style>
