@@ -101,7 +101,7 @@
     margin: 6rem 0 0;
   }
 
-  .home-approach__title { color: var(--color-white); padding-bottom: 2rem; }
+  .home-approach__title { color: var(--color-white); padding-bottom: 4rem; font-weight: 700; }
   .approach-wrapper { display: flex; justify-content: center; }
 
   .approach-wheel {
@@ -230,9 +230,9 @@
     position: relative;
   }
 
-  .steps-text h3 { font-size: 2rem; margin-top: 0; margin-bottom: 0.5rem; }
-  .step-subtitle { display: block; font-size: 1.1rem; color: var(--color-white); margin-bottom: 1.5rem; }
-  .steps-text p { margin-bottom: 2rem; }
+  .steps-text h3 { font-size: 2rem; margin-top: 0; margin-bottom: 1.5rem; font-weight: 700; }
+  .step-subtitle { display: block; font-size: 1.1rem; color: var(--color-white); margin-bottom: 1.5rem; font-weight: 700; }
+  .steps-text p { margin-bottom: 2rem; font-weight: 400; }
 
   @media (max-width: 1200px) {
     .approach-wheel,
@@ -252,7 +252,8 @@
   }
 </style>
 
-<script>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
   const rotations = ['assess', 'protect', 'monitor', 'educate'];
   const frontZones = document.querySelectorAll('.approach-circle-front .zone');
   const activeLayer = document.querySelector('.approach-circle-active');
@@ -270,5 +271,6 @@
       steps.forEach(s => s.classList.remove('active'));
       steps[index].classList.add('active');
     });
+  });
   });
 </script>

@@ -85,7 +85,8 @@
   }
 </style>
 
-<script>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
   const indicator = document.querySelector('.contact-indicator');
   const indicatorObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -96,4 +97,5 @@
     });
   }, { threshold: 0.2 });
   indicatorObserver.observe(indicator);
+  });
 </script>

@@ -8,6 +8,9 @@ const {
   title = "MALSI IT — Sécurité & Infrastructure Informatique", 
   description = "Audit, administration, maintenance et infrastructure réseau pour PME et collectivités." 
 } = Astro.props;
+
+import { ClientRouter } from "astro:transitions";
+import PageTransition from "../components/PageTransition.astro";
 ---
 
 <!DOCTYPE html>
@@ -15,6 +18,8 @@ const {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <ClientRouter />
+  <PageTransition />
   <meta name="description" content={description} />
   <title>{title}</title>
   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
@@ -142,6 +147,22 @@ const {
 
     document.querySelectorAll('[data-sal]').forEach(el => observer.observe(el));
   </script>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    document.querySelectorAll("[data-sal]").forEach(el => {
+      el.classList.remove("sal-animate");
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("sal-animate");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll("[data-sal]").forEach(el => obs.observe(el));
+  });
+</script>
 
 </body>
 </html>
@@ -245,7 +266,7 @@ const {
 
   h1 {
     font-size: 4.3rem;
-    font-weight: 700;
+    font-weight: 400;
     margin-top: 4rem;
   }
 
@@ -466,7 +487,7 @@ const {
   /* Logo */
   .logo {
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--color-white);
     text-decoration: none;
   }
@@ -852,7 +873,7 @@ const {
 
   .footer-logo {
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 400;
   }
 
   .footer-bottom {

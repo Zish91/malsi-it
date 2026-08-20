@@ -1,0 +1,59 @@
+<div class="page-transition-overlay" id="page-transition" transition:persist></div>
+
+<style is:global>
+  .page-transition-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80vw;
+    height: 80vw;
+    border-radius: 50%;
+    z-index: 10000;
+    pointer-events: none;
+    transform: scale(0);
+    opacity: 0;
+    background-color: #1a1076;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('astro:before-preparation', (event) => {
+    if (event.to.pathname === window.location.pathname) { event.preventDefault(); return; }
+
+    const overlay = document.getElementById('page-transition');
+    if (!overlay) return;
+
+    overlay.style.transition = 'none';
+    overlay.style.transform = 'scale(0)';
+    overlay.style.opacity = '1';
+    overlay.style.backgroundColor = '#1a1076';
+    overlay.offsetHeight;
+
+    overlay.style.transition = 'transform 0.65s cubic-bezier(0.17, 0.67, 0.54, 0.98), background-color 0.65s cubic-bezier(0.17, 0.67, 0.54, 0.98)';
+    overlay.style.transform = 'scale(2)';
+    overlay.style.backgroundColor = '#150d60';
+
+    const originalLoader = event.loader;
+    event.loader = async () => {
+      await new Promise(resolve => setTimeout(resolve, 650));
+      await originalLoader();
+    };
+  });
+
+  document.addEventListener('astro:after-swap', () => {
+    const overlay = document.getElementById('page-transition');
+    if (!overlay) return;
+
+    overlay.style.transition = 'none';
+    overlay.style.transform = 'scale(2)';
+    overlay.style.opacity = '1';
+    overlay.style.backgroundColor = '#150d60';
+    overlay.offsetHeight;
+
+    overlay.style.transition = 'opacity 0.65s cubic-bezier(0.17, 0.67, 0.54, 0.98)';
+    overlay.style.opacity = '0';
+  });
+</script>

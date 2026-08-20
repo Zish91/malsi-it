@@ -107,7 +107,8 @@
   }
 </style>
 
-<script>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
   const counters = document.querySelectorAll('.home-stats__number[data-target]');
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -131,4 +132,5 @@
     });
   }, { threshold: 0.5 });
   counters.forEach(c => counterObserver.observe(c));
+  });
 </script>

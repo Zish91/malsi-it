@@ -98,7 +98,8 @@
   }
 </style>
 
-<script>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
   const magicTexts = document.querySelectorAll('.magic-text span');
   let currentIndex = 0;
   setInterval(() => {
@@ -106,4 +107,5 @@
     currentIndex = (currentIndex + 1) % magicTexts.length;
     magicTexts[currentIndex].classList.add('current');
   }, 3000);
+  });
 </script>
