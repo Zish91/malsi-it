@@ -12,6 +12,7 @@ const {
 import { ClientRouter } from "astro:transitions";
 import PageTransition from "../components/PageTransition.astro";
 import DropdownStyles from "../components/DropdownStyles.astro";
+import MeshGradient from "../components/MeshGradient.astro";
 ---
 
 <!DOCTYPE html>
@@ -22,6 +23,7 @@ import DropdownStyles from "../components/DropdownStyles.astro";
   <ClientRouter />
   <PageTransition />
   <DropdownStyles />
+  <MeshGradient />
   <meta name="description" content={description} />
   <title>{title}</title>
   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
@@ -182,9 +184,9 @@ import DropdownStyles from "../components/DropdownStyles.astro";
      CSS VARIABLES — MALSI IT
      ============================================ */
   :root {
-    --color-primary: #150d60;
-    --color-primary-light: #1a1076;
-    --color-accent: #a00032;
+    --color-primary: #0d2b33;
+    --color-primary-light: #133a44;
+    --color-accent: #d4a259;
     --color-white: #ffffff;
     --color-gray: #f6f6f6;
     --color-gray-dark: #e6e6e6;
@@ -444,7 +446,7 @@ import DropdownStyles from "../components/DropdownStyles.astro";
   }
 
   .btn-primary:hover {
-    background-color: #800028;
+    background-color: #b8872e;
     color: var(--color-white) !important;
   }
 
