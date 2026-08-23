@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mentions légales — MALSI IT" description="Mentions légales du site malsi-it.fr">
+  <section class="legal-page bg-white">
+    <div class="container">
+      <h1 class="no-dot">Mentions légales</h1>
+
+      <div class="legal-content">
+        <h2>Éditeur du site</h2>
+        <p>
+          <strong>MALSI IT</strong><br/>
+          Zishan Aslam | Entrepreneur individuel<br/>
+          SIRET : 108 368 127 000 16<br/>
+          Code APE : 6202A — Conseil en systèmes et logiciels informatiques<br/>
+          Adresse : Vigneux-sur-Seine, 91270<br/>
+          Email : <a href="mailto:contact@malsi-it.fr">contact@malsi-it.fr</a><br/>
+          Téléphone : +33 6 18 35 43 88
+        </p>
+
+        <h2>Hébergement</h2>
+        <p>
+          Ce site est hébergé par <strong>Vercel Inc.</strong><br/>
+          440 N Baxter Street, Suite 4060<br/>
+          San Francisco, CA 94107, USA<br/>
+          <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>
+        </p>
+
+        <h2>Propriété intellectuelle</h2>
+        <p>L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes) est la propriété exclusive de MALSI IT, sauf mention contraire. Toute reproduction, représentation, modification ou adaptation, totale ou partielle, est interdite sans autorisation préalable écrite.</p>
+
+        <h2>Données personnelles</h2>
+        <p>Les informations recueillies via le formulaire de contact sont destinées exclusivement à MALSI IT pour le traitement de votre demande. Elles ne sont en aucun cas cédées à des tiers. Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à <a href="mailto:contact@malsi-it.fr">contact@malsi-it.fr</a>.</p>
+
+        <h2>Cookies</h2>
+        <p>Ce site n'utilise aucun cookie de suivi ni outil d'analyse comportementale. Aucune donnée de navigation n'est collectée à des fins publicitaires.</p>
+
+        <h2>Responsabilité</h2>
+        <p>MALSI IT s'efforce de fournir des informations aussi précises que possible sur ce site. Toutefois, MALSI IT ne pourra être tenu responsable des omissions, inexactitudes ou défauts de mise à jour. MALSI IT se réserve le droit de modifier le contenu du site à tout moment et sans préavis.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-page { padding: 10rem 0 4rem; margin: 0; }
+  .legal-page h1 { color: var(--color-text-dark); font-weight: 700; margin-bottom: 3rem; }
+
+  .legal-content { max-width: 800px; }
+  .legal-content h2 { color: var(--color-text-dark); font-weight: 700; font-size: 1.4rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+  .legal-content p { color: var(--color-text-dark); line-height: 1.8; margin-bottom: 1rem; }
+  .legal-content a { color: var(--color-accent); }
+  .legal-content a:hover { text-decoration: underline; }
+  .legal-content strong { font-weight: 600; }
+</style>

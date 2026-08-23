@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact — MALSI IT" description="Contactez MALSI IT pour sécuriser et gérer votre infrastructure informatique.">
+  <section class="contact">
+    <div class="container">
+      <h1>Contactez-nous</h1>
+
+      <div class="form-container">
+        <form action="https://formsubmit.co/contact@malsi-it.fr" method="POST">
+          <input type="hidden" name="_subject" value="Nouveau contact MALSI IT" />
+          <input type="hidden" name="_captcha" value="false" />
+
+          <div class="ligne">
+            <input type="text" name="name" id="c-name" required />
+            <label for="c-name">NOM</label>
+          </div>
+          <div class="ligne">
+            <input type="email" name="email" id="c-email" required />
+            <label for="c-email">EMAIL</label>
+          </div>
+          <div class="ligne">
+            <input type="text" name="phone" id="c-phone" />
+            <label for="c-phone">TÉLÉPHONE (FACULTATIF)</label>
+          </div>
+          <div class="ligne ligne-textarea">
+            <textarea name="message" id="c-message" required></textarea>
+            <label for="c-message">MESSAGE</label>
+          </div>
+          <div class="ligne">
+            <button type="submit" class="btn-primary">Envoyer</button>
+          </div>
+        </form>
+
+        <div class="form-sidebar">
+          <div>
+            <div class="sidebar-card">
+              <h2>Besoin d'un diagnostic ?</h2>
+              <p>Réservez un appel gratuit de 15 minutes pour discuter de votre infrastructure et identifier vos besoins.</p>
+              <a href="https://cal.com/malsi-it/appel-decouverte" target="_blank" class="btn-primary">Réserver un appel</a>
+            </div>
+            <address class="sidebar-address">
+              <h2>Nous écrire</h2>
+              <div class="sidebar-links">
+                <a href="mailto:contact@malsi-it.fr">contact@malsi-it.fr</a>
+                <a href="tel:+33618354388">+33 6 18 35 43 88</a>
+              </div>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact h1 {
+    margin: 12rem 0 6rem;
+  }
+
+  .form-container {
+    display: grid;
+    grid-template-columns: calc(50% - 2.5rem) calc(50% - 2.5rem);
+    gap: 5rem;
+    align-items: flex-start;
+  }
+
+  .form-container form {
+    order: -1;
+  }
+
+  .form-sidebar > div {
+    position: sticky;
+    top: 100px;
+  }
+
+  .sidebar-card {
+    background-color: var(--color-white);
+    padding: 3rem;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .sidebar-card * {
+    color: var(--color-primary) !important;
+  }
+
+  .sidebar-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-card .btn-primary {
+    color: var(--color-white) !important;
+  }
+
+  .sidebar-address {
+    background-color: var(--color-gray);
+    margin: 0;
+    padding: 3rem;
+    font-style: normal;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .sidebar-address * {
+    color: var(--color-primary) !important;
+  }
+
+  .sidebar-address h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-links a {
+    color: var(--color-accent) !important;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.3rem 0;
+  }
+
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+
+  .contact form button {
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .form-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .contact h1 {
+      margin: 8rem 0 3rem;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll('.contact .ligne input, .contact .ligne textarea').forEach(el => {
+      el.addEventListener('input', () => {
+        if (el.value.length > 0) {
+          el.classList.add('not-empty');
+        } else {
+          el.classList.remove('not-empty');
+        }
+      });
+    });
+  });
+</script>

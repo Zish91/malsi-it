@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="À propos — MALSI IT" description="Votre partenaire IT de proximité. Sécurité, infrastructure et maintenance pour PME et collectivités.">
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <section class="about-hero">
+    <div class="container">
+      <h1 class="no-dot">Votre informatique,<br/>notre priorité</h1>
+      <p class="about-hero__subtitle">MALSI IT, c'est un professionnel du réseau et de la sécurité informatique, accessible, abordable et proche de ses clients.</p>
+    </div>
+  </section>
+
+  <section class="about-content bg-white">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Qui sommes-nous ?</h2>
+          <p>MALSI IT est né d'un constat simple : les PME et les collectivités méritent un accompagnement informatique de qualité, sans les tarifs des grandes ESN ni la complexité des contrats à rallonge.</p>
+          <p>Nous croyons qu'une bonne infrastructure IT ne devrait pas être réservée aux grands groupes. C'est pourquoi nous proposons des prestations claires, à des prix justes, avec un interlocuteur unique qui connaît votre environnement.</p>
+
+          <h2>Notre approche</h2>
+          <p>Pas de jargon inutile, pas de solutions surdimensionnées. Nous commençons par écouter, puis nous proposons exactement ce dont vous avez besoin — rien de plus, rien de moins.</p>
+          <p>Que vous soyez une PME de 5 salariés ou une mairie avec plusieurs sites, nous adaptons nos services à votre réalité. Sur site ou à distance, nous restons disponibles et réactifs.</p>
+
+          <h2>Nos valeurs</h2>
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card" data-sal="fade-up">
+          <h3>Proximité</h3>
+          <p>Un seul interlocuteur qui connaît votre infrastructure. Pas de plateau téléphonique, pas de ticket perdu.</p>
+        </div>
+        <div class="value-card" data-sal="fade-up">
+          <h3>Transparence</h3>
+          <p>Des devis clairs, des rapports compréhensibles, des recommandations expliquées. Vous savez toujours ce qu'on fait et pourquoi.</p>
+        </div>
+        <div class="value-card" data-sal="fade-up">
+          <h3>Accessibilité</h3>
+          <p>Des tarifs adaptés aux petites structures. La sécurité et la fiabilité informatique ne devraient pas être un luxe.</p>
+        </div>
+        <div class="value-card" data-sal="fade-up">
+          <h3>Réactivité</h3>
+          <p>Un problème ? Nous intervenons rapidement. Maintenance proactive pour éviter les urgences, support réactif quand elles arrivent.</p>
+        </div>
+      </div>
+
+      <div class="about-cta">
+        <h2>Prêt à sécuriser votre infrastructure ?</h2>
+        <p>Parlons de votre projet. Premier échange sans engagement.</p>
+        <a href="/contact" class="btn-primary">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero { padding: 10rem 0 4rem; margin: 0; }
+  .about-hero h1 { font-weight: 700; }
+  .about-hero__subtitle { font-size: 1.2rem; max-width: 600px; margin-top: 1rem; }
+
+  .about-text { max-width: 800px; }
+  .about-text h2 { color: var(--color-text-dark); font-weight: 700; margin-top: 3rem; margin-bottom: 1rem; }
+  .about-text p { color: var(--color-text-dark); line-height: 1.8; margin-bottom: 1rem; }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .value-card {
+    border: 1px solid #e2e2e2;
+    border-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .value-card h3 { color: var(--color-text-dark); font-weight: 700; margin: 0 0 1rem; }
+  .value-card p { color: var(--color-text-dark); margin: 0; line-height: 1.6; }
+
+  .about-cta {
+    border-top: 1px solid #e2e2e2;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .about-cta h2 { color: var(--color-text-dark); font-weight: 700; margin-bottom: 0.5rem; }
+  .about-cta p { color: var(--color-text-dark); margin-bottom: 2rem; }
+
+  @media (max-width: 900px) {
+    .values-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -15,7 +15,7 @@
     pointer-events: none;
     transform: scale(0);
     opacity: 0;
-    background-color: #1a1076;
+    background-color: #133a44;
   }
 </style>
 
@@ -29,12 +29,12 @@
     overlay.style.transition = 'none';
     overlay.style.transform = 'scale(0)';
     overlay.style.opacity = '1';
-    overlay.style.backgroundColor = '#1a1076';
+    overlay.style.backgroundColor = '#133a44';
     overlay.offsetHeight;
 
     overlay.style.transition = 'transform 0.65s cubic-bezier(0.17, 0.67, 0.54, 0.98), background-color 0.65s cubic-bezier(0.17, 0.67, 0.54, 0.98)';
     overlay.style.transform = 'scale(2)';
-    overlay.style.backgroundColor = '#150d60';
+    overlay.style.backgroundColor = '#0d2b33';
 
     const originalLoader = event.loader;
     event.loader = async () => {
@@ -50,7 +50,7 @@
     overlay.style.transition = 'none';
     overlay.style.transform = 'scale(2)';
     overlay.style.opacity = '1';
-    overlay.style.backgroundColor = '#150d60';
+    overlay.style.backgroundColor = '#0d2b33';
     overlay.offsetHeight;
 
     overlay.style.transition = 'opacity 0.65s cubic-bezier(0.17, 0.67, 0.54, 0.98)';
