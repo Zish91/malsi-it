@@ -41,7 +41,7 @@
 
   @media (max-width: 900px) {
     .dropdown {
-      position: static;
+      display: none;
       transform: none;
       background: transparent;
       box-shadow: none;
@@ -49,6 +49,10 @@
       pointer-events: all;
       padding: 0;
       min-width: auto;
+    }
+
+    .dropdown-chevron {
+      display: none;
     }
 
     .dropdown__link {

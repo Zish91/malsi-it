@@ -160,6 +160,11 @@ import MeshGradient from "../components/MeshGradient.astro";
   </script>
 <script is:inline>
   document.addEventListener("astro:page-load", () => {
+    const mt = document.getElementById("menu-toggle");
+    const mw = document.getElementById("menu-wrapper");
+    if (mt) mt.classList.remove("mobileMenuIsActive");
+    if (mw) mw.classList.remove("mobileMenuIsActive");
+    document.body.classList.remove("menu-open");
     document.querySelectorAll("[data-sal]").forEach(el => {
       el.classList.remove("sal-animate");
     });
