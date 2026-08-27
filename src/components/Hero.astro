@@ -15,8 +15,8 @@
     </h1>
 
     <div class="home-hero__text">
-      <p>Nous sécurisons et administrons l'informatique des PME et collectivités. Audit, maintenance, infrastructure — tout est couvert.</p>
-      <a href="#contact" class="btn-primary">Demander un audit gratuit</a>
+      <p>CIPHER IT protège l'informatique des structures qui n'ont pas de DSI. PME, cabinets médicaux, mairies — nous sécurisons vos données, administrons vos systèmes et maintenons votre réseau. Conformité RGPD, directive NIS2, protection des données de santé — nous vous accompagnons sur tous les fronts. Pas de jargon, pas de contrats opaques. Un interlocuteur unique qui connaît votre environnement et intervient quand il faut.</p>
+      <a href="#services" class="btn-primary">Découvrez comment nous protégeons votre infrastructure</a>
     </div>
   </div>
 
@@ -57,7 +57,7 @@
 
   .magic-text span::after {
     content: "";
-    display: inline-block;
+    display: inline;
     width: 10px;
     height: 10px;
     background-color: var(--color-accent);
@@ -80,6 +80,8 @@
   .home-hero__text p { margin: 0; }
   .home-hero__text a { margin-top: 2rem; align-self: flex-start; }
 
+  .home-hero__text { margin-top: 2rem; }
+
   .scroll-more {
     position: absolute;
     bottom: 0;
@@ -93,12 +95,15 @@
     .magic-text span { white-space: normal !important; }
   }
   @media (max-width: 900px) {
-    .home-hero__title.home { font-size: 3.6rem; margin-top: 2rem; }
+    .home-hero__title.home { font-size: 3.3rem; margin-top: 2rem; }
+    .magic-text { height: auto; min-height: 160px; }
   }
   @media (max-width: 600px) {
     .home-hero__title.home { font-size: 2.2rem; }
-    .magic-text { height: 80px; }
-    .magic-text span::after { width: 7px; height: 7px; }
+    .magic-text { height: auto; min-height: 140px; }
+    .magic-text span::after { content: "."; width: auto; height: auto; background: none; display: inline; font-weight: 700; font-size: 2.2rem; color: var(--color-accent); }
+    .scroll-more { position: relative; }
+    .homepage-title { padding-bottom: 2rem; }
   }
 </style>
 
