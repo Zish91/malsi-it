@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 | CIPHER IT">
+  <section class="page-404">
+    <div class="container">
+      <img src="/favicon.png" alt="CIPHER IT" class="page-404__logo" width="200" height="200" />
+      <span class="page-404__code">404</span>
+      <h1 class="no-dot">Cette page a été chiffrée...</h1>
+      <p>...et on a perdu la clé.</p>
+      <a href="/" class="btn-primary">Retour à l'accueil</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-404 {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+  }
+
+  .page-404 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .page-404__logo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .page-404__code {
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .page-404 h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  .page-404 p {
+    margin: 0 0 2rem;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  @media (max-width: 600px) {
+    .page-404__code { font-size: 5rem; }
+    .page-404 h1 { font-size: 1.5rem; }
+    .page-404__logo { width: 80px; height: 80px; }
+  }
+</style>
