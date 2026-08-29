@@ -1,54 +1,114 @@
 <style is:global>
-  .logo-cipher, .logo-accent-decode {
+  .logo {
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .nav-logo-text {
     display: inline;
+  }
+
+  .logo-accent {
+    color: var(--color-accent);
+  }
+
+  .nav-cursor {
+    color: var(--color-accent);
+    font-weight: 300;
+    animation: blink 0.6s step-end infinite;
+  }
+
+  .nav-cursor.hide { display: none; }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .logo::before,
+  .logo::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  .logo::before { color: var(--color-accent); z-index: -1; }
+  .logo::after { color: #ff00ff; z-index: -1; }
+
+  .logo:hover {
+    animation: glitch-main 0.4s linear infinite;
+    text-shadow: 0 0 10px rgba(212, 162, 89, 0.5);
+  }
+
+  .logo:hover::before {
+    opacity: 0.8;
+    animation: glitch-top 0.4s linear infinite;
+  }
+
+  .logo:hover::after {
+    opacity: 0.8;
+    animation: glitch-bottom 0.4s linear infinite;
+  }
+
+  @keyframes glitch-main {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 1px); }
+    40% { transform: translate(2px, -1px); }
+    60% { transform: translate(-1px, -1px); }
+    80% { transform: translate(1px, 2px); }
+  }
+
+  @keyframes glitch-top {
+    0%, 100% { clip-path: inset(0 0 60% 0); transform: translate(0); }
+    20% { clip-path: inset(0 0 60% 0); transform: translate(3px, 0); }
+    40% { clip-path: inset(20% 0 40% 0); transform: translate(-3px, 0); }
+    60% { clip-path: inset(40% 0 20% 0); transform: translate(2px, 0); }
+    80% { clip-path: inset(10% 0 50% 0); transform: translate(-2px, 0); }
+  }
+
+  @keyframes glitch-bottom {
+    0%, 100% { clip-path: inset(60% 0 0 0); transform: translate(0); }
+    20% { clip-path: inset(60% 0 0 0); transform: translate(-3px, 0); }
+    40% { clip-path: inset(40% 0 20% 0); transform: translate(3px, 0); }
+    60% { clip-path: inset(20% 0 40% 0); transform: translate(-2px, 0); }
+    80% { clip-path: inset(50% 0 10% 0); transform: translate(2px, 0); }
   }
 </style>
 
 <script is:inline>
   document.addEventListener('astro:page-load', () => {
-    const cipherEl = document.querySelector('.logo-cipher');
-    const itEl = document.querySelector('.logo-accent-decode');
-    if (!cipherEl) return;
+    const logoText = document.querySelector('.nav-logo-text');
+    const cursor = document.querySelector('.nav-cursor');
+    if (!logoText || logoText.dataset.typed === 'true') return;
 
-    const chars = '01@#$%&*!?<>{}[]=/\\|~^';
-    const stepsPerLetter = 10;
+    logoText.innerHTML = '';
+    const cipher = 'CIPHER';
+    const it = 'IT';
+    let i = 0;
+    const full = cipher + ' ' + it;
 
-    function decode(el, text, delay, duration) {
-      let resolved = 0;
-      let step = 0;
-      const totalSteps = text.length * stepsPerLetter;
-      const interval = duration / totalSteps;
-
-      // Scramble immédiatement
-      let scrambled = '';
-      for (let i = 0; i < text.length; i++) {
-        scrambled += chars[Math.floor(Math.random() * chars.length)];
+    function typeWriter() {
+      if (i < full.length) {
+        i++;
+        const typed = full.substring(0, i);
+        if (i <= cipher.length) {
+          logoText.innerHTML = typed;
+        } else {
+          logoText.innerHTML = cipher + ' <span class="logo-accent">' + typed.substring(cipher.length + 1) + '</span>';
+        }
+        setTimeout(typeWriter, 150);
+      } else {
+        logoText.innerHTML = cipher + ' <span class="logo-accent">' + it + '</span>';
+        setTimeout(() => { if (cursor) cursor.classList.add('hide'); }, 1800);
       }
-      el.textContent = scrambled;
-
-      setTimeout(() => {
-        const timer = setInterval(() => {
-          step++;
-          resolved = Math.floor(step / stepsPerLetter);
-          let result = '';
-          for (let i = 0; i < text.length; i++) {
-            if (i < resolved) {
-              result += text[i];
-            } else {
-              result += chars[Math.floor(Math.random() * chars.length)];
-            }
-          }
-          el.textContent = result;
-
-          if (resolved >= text.length) {
-            clearInterval(timer);
-            el.textContent = text;
-          }
-        }, interval);
-      }, delay);
     }
 
-    decode(cipherEl, 'CIPHER', 0, 2500);
-    if (itEl) decode(itEl, 'IT', 1800, 1200);
+    setTimeout(typeWriter, 500);
+    logoText.dataset.typed = 'true';
   });
 </script>

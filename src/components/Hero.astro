@@ -1,21 +1,18 @@
 <section class="homepage-title">
-  <div class="container">
-    <h1 class="home no-dot home-hero__title">
+  <div class="container hero-content">
+    <h1 class="home no-dot home-hero__title hero-anim hero-anim-1">
       Votre partenaire en<br />
       <span class="magic-text">
         <span class="current">sécurité informatique</span>
         <span>infrastructure réseau</span>
         <span>protection des données</span>
         <span>conformité RGPD</span>
-        <span>protection des données</span>
-        <span>conformité RGPD</span>
-        
-        
       </span>
     </h1>
 
-    <div class="home-hero__text">
-      <p>CIPHER IT protège l'informatique des structures qui n'ont pas de DSI. PME, cabinets médicaux, mairies — nous sécurisons vos données, administrons vos systèmes et maintenons votre réseau. Conformité RGPD, directive NIS2, protection des données de santé — nous vous accompagnons sur tous les fronts. Pas de jargon, pas de contrats opaques. Un interlocuteur unique qui connaît votre environnement et intervient quand il faut.</p>
+    <p class="home-hero__subtitle hero-anim hero-anim-2">CIPHER IT protège l'informatique des structures qui n'ont pas de DSI. PME, cabinets médicaux, mairies — nous sécurisons vos données, administrons vos systèmes et maintenons votre réseau. Conformité RGPD, directive NIS2, protection des données de santé — nous vous accompagnons sur tous les fronts. Pas de jargon, pas de contrats opaques. Un interlocuteur unique qui connaît votre environnement et intervient quand il faut.</p>
+
+    <div class="hero-anim hero-anim-3">
       <a href="#services" class="btn-primary">Découvrez comment nous protégeons votre infrastructure</a>
     </div>
   </div>
@@ -25,19 +22,21 @@
 
 <style>
   .homepage-title {
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
     margin: 0;
-    padding: 0;
+    padding: 8rem 0 16rem;
+    position: relative;
+  }
+
+  .hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
   .home-hero__title.home {
     font-size: 4.8rem;
     font-weight: 700;
-    margin-top: 4rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
   }
 
   .magic-text {
@@ -69,18 +68,10 @@
     transform: translateY(0);
   }
 
-  .home-hero__text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  .home-hero__subtitle {
     max-width: 740px;
-    margin-top: 1rem;
+    margin: 0 0 2.5rem;
   }
-
-  .home-hero__text p { margin: 0; }
-  .home-hero__text a { margin-top: 2rem; align-self: flex-start; }
-
-  .home-hero__text { margin-top: 2rem; }
 
   .scroll-more {
     position: absolute;
@@ -89,32 +80,61 @@
     right: 0;
   }
 
+  /* Hero cascade */
+  .hero-anim {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: hero-fade-in 0.8s ease forwards;
+  }
+
+  .hero-anim-1 { animation-delay: 0.3s; }
+  .hero-anim-2 { animation-delay: 0.6s; }
+  .hero-anim-3 { animation-delay: 0.9s; }
+
+  @keyframes hero-fade-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   @media (max-width: 1200px) {
     .home-hero__title.home { font-size: 4.4rem; }
     .magic-text { height: auto; }
     .magic-text span { white-space: normal !important; }
   }
   @media (max-width: 900px) {
-    .home-hero__title.home { font-size: 3.3rem; margin-top: 2rem; }
+    .home-hero__title.home { font-size: 3.3rem; }
     .magic-text { height: auto; min-height: 160px; }
+  }
+  @media (max-width: 768px) {
+    .homepage-title { padding: 7rem 0 8rem; }
   }
   @media (max-width: 600px) {
     .home-hero__title.home { font-size: 2.2rem; }
     .magic-text { height: auto; min-height: 140px; }
     .magic-text span::after { content: "."; width: auto; height: auto; background: none; display: inline; font-weight: 700; font-size: 2.2rem; color: var(--color-accent); }
     .scroll-more { position: relative; }
-    .homepage-title { padding-bottom: 2rem; }
   }
 </style>
 
 <script is:inline>
-  document.addEventListener("astro:page-load", () => {
-  const magicTexts = document.querySelectorAll('.magic-text span');
-  let currentIndex = 0;
-  setInterval(() => {
-    magicTexts[currentIndex].classList.remove('current');
-    currentIndex = (currentIndex + 1) % magicTexts.length;
-    magicTexts[currentIndex].classList.add('current');
-  }, 3000);
+  document.addEventListener('astro:page-load', () => {
+    const magicTexts = document.querySelectorAll('.magic-text span');
+    if (!magicTexts.length) return;
+
+    // Replay cascade animations
+    document.querySelectorAll('.hero-anim').forEach(el => {
+      el.style.animation = 'none';
+      el.offsetHeight;
+      el.style.animation = '';
+    });
+
+    let currentIndex = 0;
+    setInterval(() => {
+      magicTexts[currentIndex].classList.remove('current');
+      currentIndex = (currentIndex + 1) % magicTexts.length;
+      magicTexts[currentIndex].classList.add('current');
+    }, 3000);
   });
 </script>
