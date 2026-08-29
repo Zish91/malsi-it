@@ -23,7 +23,11 @@
 <style>
   .homepage-title {
     margin: 0;
-    padding: 8rem 0 16rem;
+    min-height: calc(100vh - 80px);
+    padding: 8rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
   }
 
@@ -108,7 +112,7 @@
     .magic-text { height: auto; min-height: 160px; }
   }
   @media (max-width: 768px) {
-    .homepage-title { padding: 7rem 0 8rem; }
+    .homepage-title { min-height: auto; padding: 7rem 0 8rem; }
   }
   @media (max-width: 600px) {
     .home-hero__title.home { font-size: 2.2rem; }
