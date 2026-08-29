@@ -136,16 +136,6 @@ import MeshGradient from "../components/MeshGradient.astro";
       lastScroll = currentScroll;
     });
 
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuWrapper = document.getElementById('menu-wrapper');
-
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('mobileMenuIsActive');
-      menuWrapper.classList.toggle('mobileMenuIsActive');
-      document.body.classList.toggle('menu-open');
-    });
-
     // Scroll animations (fade-up)
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
@@ -165,6 +155,13 @@ import MeshGradient from "../components/MeshGradient.astro";
     if (mt) mt.classList.remove("mobileMenuIsActive");
     if (mw) mw.classList.remove("mobileMenuIsActive");
     document.body.classList.remove("menu-open");
+    if (mt) {
+      mt.addEventListener("click", () => {
+        mt.classList.toggle("mobileMenuIsActive");
+        mw.classList.toggle("mobileMenuIsActive");
+        document.body.classList.toggle("menu-open");
+      });
+    }
     document.querySelectorAll("[data-sal]").forEach(el => {
       el.classList.remove("sal-animate");
     });
