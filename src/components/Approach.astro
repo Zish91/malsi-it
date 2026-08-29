@@ -46,7 +46,7 @@
           </div>
 
           <div class="approach-circle-center">
-            <span class="center-logo">C<span class="center-logo-accent">I</span></span>
+            <img src="/logo.png" alt="CIPHER IT" class="center-logo-img" />
           </div>
         </div>
       </div>
@@ -203,10 +203,11 @@
     justify-content: center;
   }
 
-  .center-logo {
-    font-size: 6.5rem;
-    font-weight: 700;
-    color: var(--color-white);
+  .center-logo-img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    border-radius: 50%;
   }
 
 
@@ -250,9 +251,12 @@
     .approach { padding-bottom: 2rem; }
   }
   @media (max-width: 600px) {
-    .center-logo { font-size: 3.5rem; }
-    .approach-wheel,
-    .approach-circle-zones { width: 300px; height: 300px; }
+  .center-logo-img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
     .home-approach__text { transform: scale(0.65); }
     .home-approach__text p { font-size: 1rem; }
   }
