@@ -13,6 +13,7 @@ import { ClientRouter } from "astro:transitions";
 import PageTransition from "../components/PageTransition.astro";
 import DropdownStyles from "../components/DropdownStyles.astro";
 import MeshGradient from "../components/MeshGradient.astro";
+import LogoDecode from "../components/LogoDecode.astro";
 ---
 
 <!DOCTYPE html>
@@ -24,6 +25,7 @@ import MeshGradient from "../components/MeshGradient.astro";
   <PageTransition />
   <DropdownStyles />
   <MeshGradient />
+  <LogoDecode />
   <meta name="description" content={description} />
   <title>{title}</title>
   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
@@ -36,7 +38,7 @@ import MeshGradient from "../components/MeshGradient.astro";
   <!-- HEADER -->
   <header class="header" id="site-header">
     <nav class="nav container">
-      <a href="/" class="logo">CIPHER <span class="logo-accent">IT</span></a>
+      <a href="/" class="logo"><span class="logo-cipher">CIPHER</span> <span class="logo-accent logo-accent-decode">IT</span></a>
 
       <button class="menu-button" id="menu-toggle" aria-label="Menu">
         <div class="menu-bars">
@@ -76,7 +78,7 @@ import MeshGradient from "../components/MeshGradient.astro";
   <footer>
     <div class="footer-up container">
       <div class="footer-col footer-description">
-        <a href="/" class="footer-logo">CIPHER <span class="logo-accent">IT</span></a>
+        <a href="/" class="footer-logo">CIPHER <span class="logo-accent logo-accent-decode">IT</span></a>
         <p>Sécurité, infrastructure et sérénité informatique pour les PME et collectivités.</p>
       </div>
       <div class="footer-col footer-navigation">

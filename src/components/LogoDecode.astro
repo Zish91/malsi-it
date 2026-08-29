@@ -1,0 +1,54 @@
+<style is:global>
+  .logo-cipher, .logo-accent-decode {
+    display: inline;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const cipherEl = document.querySelector('.logo-cipher');
+    const itEl = document.querySelector('.logo-accent-decode');
+    if (!cipherEl) return;
+
+    const chars = '01@#$%&*!?<>{}[]=/\\|~^';
+    const stepsPerLetter = 10;
+
+    function decode(el, text, delay, duration) {
+      let resolved = 0;
+      let step = 0;
+      const totalSteps = text.length * stepsPerLetter;
+      const interval = duration / totalSteps;
+
+      // Scramble immédiatement
+      let scrambled = '';
+      for (let i = 0; i < text.length; i++) {
+        scrambled += chars[Math.floor(Math.random() * chars.length)];
+      }
+      el.textContent = scrambled;
+
+      setTimeout(() => {
+        const timer = setInterval(() => {
+          step++;
+          resolved = Math.floor(step / stepsPerLetter);
+          let result = '';
+          for (let i = 0; i < text.length; i++) {
+            if (i < resolved) {
+              result += text[i];
+            } else {
+              result += chars[Math.floor(Math.random() * chars.length)];
+            }
+          }
+          el.textContent = result;
+
+          if (resolved >= text.length) {
+            clearInterval(timer);
+            el.textContent = text;
+          }
+        }, interval);
+      }, delay);
+    }
+
+    decode(cipherEl, 'CIPHER', 0, 2500);
+    if (itEl) decode(itEl, 'IT', 1800, 1200);
+  });
+</script>
