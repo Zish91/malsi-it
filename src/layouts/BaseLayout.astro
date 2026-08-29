@@ -5,7 +5,7 @@ interface Props {
 }
 
 const { 
-  title = "CIPHER IT — Sécurité & Infrastructure Informatique", 
+  title = "CIPHER IT | Sécurité & Infrastructure Informatique", 
   description = "Audit, administration, maintenance et infrastructure réseau pour PME et collectivités." 
 } = Astro.props;
 
@@ -41,7 +41,7 @@ import LogoDecode from "../components/LogoDecode.astro";
   <!-- HEADER -->
   <header class="header" id="site-header">
     <nav class="nav container">
-      <a href="/" class="logo" data-text="CIPHER IT"><span class="nav-logo-text"></span><span class="nav-cursor">|</span></a>
+      <a href="/" class="logo" data-text="CIPHER IT"><span class="nav-logo-text"></span><span class="nav-slogan">Votre tranquillité numérique</span><span class="nav-cursor">|</span></a>
 
       <button class="menu-button" id="menu-toggle" aria-label="Menu">
         <div class="menu-bars">
@@ -111,7 +111,7 @@ import LogoDecode from "../components/LogoDecode.astro";
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <span>CIPHER IT — {new Date().getFullYear()}</span>
+        <span>CIPHER IT | {new Date().getFullYear()}</span>
         <a href="/mentions-legales">Mentions légales</a>
       </div>
     </div>
@@ -187,7 +187,7 @@ import LogoDecode from "../components/LogoDecode.astro";
 
 <style is:global>
   /* ============================================
-     CSS VARIABLES — CIPHER IT
+     CSS VARIABLES | CIPHER IT
      ============================================ */
   :root {
     --color-primary: #0d2b33;
