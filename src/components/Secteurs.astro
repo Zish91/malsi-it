@@ -1,0 +1,93 @@
+<section class="home-secteurs bg-white">
+  <div class="container">
+    <h2 data-sal="fade-up" class="secteurs-title">À qui s'adresse CIPHER IT ?</h2>
+    <p class="secteurs-subtitle" data-sal="fade-up">Nous accompagnons les structures qui manipulent des données sensibles et qui ont besoin d'une informatique fiable — sans avoir les moyens d'un DSI interne.</p>
+
+    <div class="secteurs-grid">
+      <div class="secteur-card" data-sal="fade-up">
+        <span class="secteur-icon">🏥</span>
+        <h3>Santé</h3>
+        <p>Cabinets médicaux, cliniques, laboratoires. Protection des données patients, conformité RGPD et HDS, sécurisation des postes et du réseau.</p>
+      </div>
+
+      <div class="secteur-card" data-sal="fade-up">
+        <span class="secteur-icon">⚖️</span>
+        <h3>Juridique</h3>
+        <p>Cabinets d'avocats, notaires, huissiers. Secret professionnel, chiffrement des échanges, traçabilité des accès aux dossiers clients.</p>
+      </div>
+
+      <div class="secteur-card" data-sal="fade-up">
+        <span class="secteur-icon">🏛️</span>
+        <h3>Collectivités</h3>
+        <p>Mairies, communautés de communes, établissements publics. Conformité NIS2, sécurisation des services numériques, protection contre les ransomwares.</p>
+      </div>
+
+      <div class="secteur-card" data-sal="fade-up">
+        <span class="secteur-icon">🏢</span>
+        <h3>PME</h3>
+        <p>Commerces, artisans, bureaux d'études. Audit réseau, administration système, maintenance proactive — tout ce qu'il faut pour travailler sereinement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .secteurs-title {
+    color: var(--color-primary);
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  .secteurs-subtitle {
+    color: var(--color-text-dark);
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .secteurs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .secteur-card {
+    border: 1px solid #e2e2e2;
+    border-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .secteur-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .secteur-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .secteur-card h3 {
+    color: var(--color-primary);
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+
+  .secteur-card p {
+    color: var(--color-text-dark);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .secteurs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 600px) {
+    .secteurs-grid { grid-template-columns: 1fr; }
+  }
+</style>
