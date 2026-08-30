@@ -76,9 +76,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .value-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
     border: 1px solid #e2e2e2;
     border-radius: 0.5rem;
     padding: 2rem 1.5rem;
+  }
+
+  .value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   }
 
   .value-card h3 { color: var(--color-text-dark); font-weight: 700; margin: 0 0 1rem; }

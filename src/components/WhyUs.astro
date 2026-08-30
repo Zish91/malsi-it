@@ -39,6 +39,8 @@
   }
 
   .home-why__item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
     background: radial-gradient(circle, #fff 0%, rgba(235,235,235,0.3) 100%);
     border: 1px solid #e2e2e2;
     border-radius: 0.5rem;
@@ -48,6 +50,11 @@
   }
 
   .home-why__item-title { color: var(--color-text-dark); margin: 0.5rem 0 1rem; }
+  .home-why__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  }
+
   .home-why__item-text { color: var(--color-text-dark); margin: 0; }
 
   @media (max-width: 900px) {
