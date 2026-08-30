@@ -1,0 +1,74 @@
+<div class="cursor-circle" id="cursor-circle"></div>
+
+<style is:global>
+  @media (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
+
+    .cursor-circle {
+      width: 20px;
+      height: 20px;
+      background-color: rgba(212, 162, 89, 0.3);
+      border: 1.5px solid var(--color-accent);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999;
+      transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+    }
+
+    .cursor-circle.hover {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(212, 162, 89, 0.1);
+    }
+
+    .cursor-circle.hidden {
+      opacity: 0;
+    }
+  }
+
+  @media (pointer: coarse) {
+    .cursor-circle {
+      display: none !important;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const circle = document.getElementById('cursor-circle');
+    if (!circle) return;
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
+    let mouseX = 0, mouseY = 0;
+    let circleX = 0, circleY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animate() {
+      circleX += (mouseX - circleX) * 0.12;
+      circleY += (mouseY - circleY) * 0.12;
+      circle.style.left = circleX - circle.offsetWidth / 2 + 'px';
+      circle.style.top = circleY - circle.offsetHeight / 2 + 'px';
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    const hoverTargets = 'a, button, .btn-primary, .btn-outline, .zone, .blog-post-item, .service-card, .secteur-card, .menu-link, .link-button';
+
+    document.querySelectorAll(hoverTargets).forEach(el => {
+      el.addEventListener('mouseenter', () => circle.classList.add('hover'));
+      el.addEventListener('mouseleave', () => circle.classList.remove('hover'));
+    });
+
+    document.addEventListener('mouseleave', () => circle.classList.add('hidden'));
+    document.addEventListener('mouseenter', () => circle.classList.remove('hidden'));
+  });
+</script>
