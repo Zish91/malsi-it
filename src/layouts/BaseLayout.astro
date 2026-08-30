@@ -30,6 +30,15 @@ import LogoDecode from "../components/LogoDecode.astro";
   <MeshGradient />
   <LogoDecode />
   <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="https://cipher-it.fr/favicon.png" />
+  <meta property="og:url" content="https://cipher-it.fr" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://cipher-it.fr/favicon.png" />
   <title>{title}</title>
   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
