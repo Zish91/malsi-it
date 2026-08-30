@@ -10,7 +10,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="form-container">
         <form action="https://formsubmit.co/contact@cipher-it.fr" method="POST">
           <input type="hidden" name="_subject" value="Nouveau contact CIPHER IT" />
-          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_captcha" value="true" />
       <input type="hidden" name="_honey" style="display:none" />
 
           <div class="form-group">
@@ -42,6 +42,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <button type="submit" class="btn-primary">Envoyer</button>
+          <p class="form-secure">🔒 Formulaire protégé — aucune donnée transmise à des tiers.</p>
         </form>
 
         <div class="form-sidebar">
@@ -128,6 +129,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .form-input-wrapper textarea {
     resize: vertical;
     min-height: 120px;
+  }
+
+  .form-secure {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 1rem;
   }
 
   form button {
