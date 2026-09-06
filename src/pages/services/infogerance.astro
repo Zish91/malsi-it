@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Infogérance | CIPHER IT" description="Gestion de votre parc informatique : postes, serveurs, comptes, droits d'accès, mises à jour. Windows et Linux.">
+  <section class="service-page-hero">
+    <div class="container">
+      <span class="service-page-hero__number">01</span>
+      <h1 class="no-dot">Infogérance</h1>
+      <p class="service-page-hero__subtitle">Votre parc informatique, on le gère</p>
+    </div>
+  </section>
+
+  <section class="service-page-content bg-white">
+    <div class="container">
+      <div class="service-page-body">
+        <h2>Vos postes et serveurs entre de bonnes mains</h2>
+        <p>On gère vos postes et vos serveurs comme si c'étaient les nôtres. Installation, configuration, comptes utilisateurs, droits d'accès, mises à jour. Que vous tourniez sous Windows ou Linux, on s'adapte à votre environnement.</p>
+        <p>Vous avez un problème, vous appelez, on intervient — pas un numéro de ticket, un humain.</p>
+
+        <h3>Ce qu'on fait concrètement</h3>
+        <ul>
+          <li>Active Directory : comptes, groupes, OU, stratégies de groupe (GPO)</li>
+          <li>Gestion des droits d'accès — principe du moindre privilège</li>
+          <li>Déploiement et configuration de postes et serveurs</li>
+          <li>Mises à jour système et applicatives</li>
+          <li>Support utilisateur au quotidien</li>
+          <li>Environnements Windows et Linux</li>
+        </ul>
+
+        <h3>Pour qui ?</h3>
+        <p>PME, cabinets médicaux, cabinets d'avocats, mairies — toute structure qui a besoin d'un parc informatique bien géré sans embaucher un informaticien à plein temps.</p>
+
+        <a href="/contact" class="btn-primary">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-page-hero { padding: 10rem 0 4rem; margin: 0; }
+  .service-page-hero__number { color: var(--color-accent); font-size: 1rem; font-weight: 700; }
+  .service-page-hero h1 { font-weight: 700; margin-top: 0.5rem; }
+  .service-page-hero__subtitle { font-size: 1.2rem; max-width: 600px; }
+
+  .service-page-body { max-width: 800px; padding: 2rem 0 4rem; }
+  .service-page-body h2 { color: var(--color-text-dark); font-weight: 700; margin-bottom: 1rem; }
+  .service-page-body h3 { color: var(--color-text-dark); font-weight: 700; margin-top: 2rem; margin-bottom: 0.5rem; }
+  .service-page-body p { color: var(--color-text-dark); line-height: 1.8; margin-bottom: 1.5rem; }
+  .service-page-body ul { color: var(--color-text-dark); padding-left: 1.5rem; margin-bottom: 1.5rem; list-style: disc; }
+  .service-page-body li { margin-bottom: 0.5rem; line-height: 1.6; }
+  .service-page-body .btn-primary { margin-top: 2rem; }
+</style>

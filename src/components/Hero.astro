@@ -3,18 +3,17 @@
     <h1 class="home no-dot home-hero__title hero-anim hero-anim-1">
       Votre partenaire en<br />
       <span class="magic-text">
-        <span class="current">sécurité informatique</span>
-        <span>infrastructure réseau</span>
-        <span>protection des données</span>
-        <span>conformité RGPD</span>
+        <span class="current">infogérance</span>
+        <span>réseau & sécurité</span>
+        <span>maintenance informatique</span>
+        <span>modernisation IT</span>
       </span>
     </h1>
 
     <div class="home-hero__subtitle hero-anim hero-anim-2">
-      <p>CIPHER IT protège l'informatique des structures qui n'ont pas de DSI.</p>
-      <p>PME, cabinets médicaux, mairies, nous sécurisons vos données, administrons vos systèmes et maintenons votre réseau.</p>
-      <p>Conformité RGPD, directive NIS2, protection des données de santé, nous vous accompagnons sur tous les fronts.</p>
-      <p>Pas de jargon, pas de contrats opaques. Un interlocuteur unique qui connaît votre environnement et intervient quand il faut.</p>
+      <p>CIPHER IT s'occupe de l'informatique des structures qui n'ont pas d'informaticien.</p>
+      <p>PME, cabinets médicaux, mairies — on installe, on sécurise, on dépanne, on maintient.</p>
+      <p>Un seul interlocuteur, pas de jargon, pas de ticket qui traîne.</p>
     </div>
 
     <div class="hero-anim hero-anim-3">
@@ -27,13 +26,13 @@
 
 <style>
   .homepage-title {
-    margin: 0;
     min-height: calc(100vh - 80px);
     padding: 8rem 0 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
+    margin: 0;
   }
 
   .hero-content {
@@ -77,13 +76,13 @@
     transform: translateY(0);
   }
 
-  .home-hero__subtitle p {
-    margin-bottom: 0.5rem;
-  }
-
   .home-hero__subtitle {
     max-width: 740px;
     margin: 0 0 2.5rem;
+  }
+
+  .home-hero__subtitle p {
+    margin-bottom: 0.5rem;
   }
 
   .scroll-more {
@@ -128,6 +127,7 @@
     .magic-text { height: auto; min-height: 140px; }
     .magic-text span::after { content: "."; width: auto; height: auto; background: none; display: inline; font-weight: 700; font-size: 2.2rem; color: var(--color-accent); }
     .scroll-more { position: relative; }
+    .home-hero__subtitle { margin-top: 2rem; }
   }
 </style>
 
@@ -136,7 +136,6 @@
     const magicTexts = document.querySelectorAll('.magic-text span');
     if (!magicTexts.length) return;
 
-    // Replay cascade animations
     document.querySelectorAll('.hero-anim').forEach(el => {
       el.style.animation = 'none';
       el.offsetHeight;

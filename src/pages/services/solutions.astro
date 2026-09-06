@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Solutions | CIPHER IT" description="Migration Linux, Nextcloud, Samba. Sites web, emails pro. Modernisez votre infrastructure sans tout casser.">
+  <section class="service-page-hero">
+    <div class="container">
+      <span class="service-page-hero__number">04</span>
+      <h1 class="no-dot">Solutions</h1>
+      <p class="service-page-hero__subtitle">Modernisez sans tout casser</p>
+    </div>
+  </section>
+
+  <section class="service-page-content bg-white">
+    <div class="container">
+      <div class="service-page-body">
+        <h2>Votre serveur est en fin de vie ? Vos licences coûtent une fortune ?</h2>
+        <p>On migre vers des solutions libres et fiables — Linux, Samba, Nextcloud — qui font le même travail pour une fraction du prix. On vous accompagne étape par étape, sans casser ce qui marche.</p>
+
+        <h3>Migration & modernisation</h3>
+        <ul>
+          <li>Migration de serveurs Windows vers Linux</li>
+          <li>Partage de fichiers avec Samba — remplace votre serveur de fichiers Windows</li>
+          <li>Cloud privé avec Nextcloud — alternative à OneDrive/Google Drive</li>
+          <li>Remplacement de matériel en fin de vie</li>
+          <li>Accompagnement étape par étape — sans interruption de service</li>
+        </ul>
+
+        <h3>Sites web & emails</h3>
+        <ul>
+          <li>Création et maintenance de votre site vitrine</li>
+          <li>Gestion de vos emails professionnels</li>
+          <li>Mises à jour de sécurité, hébergement, noms de domaine</li>
+          <li>Tout est géré — vous n'avez pas à vous en occuper</li>
+        </ul>
+
+        <h3>Pour qui ?</h3>
+        <p>Toute structure qui veut moderniser son infrastructure sans exploser son budget. On trouve la solution adaptée à votre taille et vos besoins.</p>
+
+        <a href="/contact" class="btn-primary">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-page-hero { padding: 10rem 0 4rem; margin: 0; }
+  .service-page-hero__number { color: var(--color-accent); font-size: 1rem; font-weight: 700; }
+  .service-page-hero h1 { font-weight: 700; margin-top: 0.5rem; }
+  .service-page-hero__subtitle { font-size: 1.2rem; max-width: 600px; }
+
+  .service-page-body { max-width: 800px; padding: 2rem 0 4rem; }
+  .service-page-body h2 { color: var(--color-text-dark); font-weight: 700; margin-bottom: 1rem; }
+  .service-page-body h3 { color: var(--color-text-dark); font-weight: 700; margin-top: 2rem; margin-bottom: 0.5rem; }
+  .service-page-body p { color: var(--color-text-dark); line-height: 1.8; margin-bottom: 1.5rem; }
+  .service-page-body ul { color: var(--color-text-dark); padding-left: 1.5rem; margin-bottom: 1.5rem; list-style: disc; }
+  .service-page-body li { margin-bottom: 0.5rem; line-height: 1.6; }
+  .service-page-body .btn-primary { margin-top: 2rem; }
+</style>

@@ -18,21 +18,21 @@
             <div class="zone active" data-index="0">
               <div class="zone-in">
                 <div class="home-approach__text">
-                  <p>AUDIT &<br/>SÉCURITÉ</p>
+                  <p>INFO-<br/>GÉRANCE</p>
                 </div>
               </div>
             </div>
             <div class="zone" data-index="1">
               <div class="zone-in">
                 <div class="home-approach__text">
-                  <p>ADMIN<br/>SYSTÈME</p>
+                  <p>RÉSEAU &<br/>SÉCURITÉ</p>
                 </div>
               </div>
             </div>
             <div class="zone" data-index="2">
               <div class="zone-in">
                 <div class="home-approach__text">
-                  <p>INFRA<br/>RÉSEAU</p>
+                  <p>SOLU-<br/>TIONS</p>
                 </div>
               </div>
             </div>
@@ -53,27 +53,27 @@
 
       <div class="steps-text">
         <div class="step active" data-step="0">
-          <h3>AUDIT & SÉCURITÉ</h3>
-          <span class="step-subtitle">Connaissez l'état réel de votre infrastructure</span>
-          <p>Nous réalisons un diagnostic complet de votre réseau et de vos systèmes, révélant les failles avant qu'elles ne deviennent un problème. Conformité RGPD, préparation NIS2 — un rapport clair avec un plan d'action concret.</p>
-          <a href="/services/audit-securite" class="btn-primary">En savoir plus</a>
+          <h3>INFOGÉRANCE</h3>
+          <span class="step-subtitle">Votre parc informatique, on le gère</span>
+          <p>On gère vos postes et vos serveurs comme si c'étaient les nôtres. Active Directory, comptes utilisateurs, droits d'accès, mises à jour. Windows ou Linux, on s'adapte. Vous avez un problème, vous appelez un humain, pas un numéro de ticket.</p>
+          <a href="/services/infogerance" class="btn-primary">En savoir plus</a>
         </div>
         <div class="step" data-step="1">
-          <h3>ADMINISTRATION SYSTÈME</h3>
-          <span class="step-subtitle">Votre parc informatique entre de bonnes mains</span>
-          <p>PME, cabinets médicaux, mairies — nous gérons votre Active Directory, vos droits d'accès et vos mises à jour comme si c'était notre propre infrastructure.</p>
-          <a href="/services/administration" class="btn-primary">En savoir plus</a>
+          <h3>RÉSEAU & SÉCURITÉ</h3>
+          <span class="step-subtitle">Un réseau propre, segmenté, qui tient la route</span>
+          <p>Switchs managés, VLANs, Wi-Fi pro, VPN télétravail, pare-feu pfSense/OPNsense. Du matériel adapté à votre taille, pas du surdimensionné. On ferme les portes, on met les serrures, on vérifie qu'elles tiennent.</p>
+          <a href="/services/reseau-securite" class="btn-primary">En savoir plus</a>
         </div>
         <div class="step" data-step="2">
-          <h3>INFRASTRUCTURE RÉSEAU</h3>
-          <span class="step-subtitle">Un réseau taillé pour votre activité</span>
-          <p>Switchs managés, pare-feu, VPN, VLANs, Wi-Fi sécurisé — nous concevons et déployons des réseaux adaptés à vos besoins et votre budget.</p>
-          <a href="/services/infrastructure-reseau" class="btn-primary">En savoir plus</a>
+          <h3>SOLUTIONS</h3>
+          <span class="step-subtitle">Modernisez sans tout casser</span>
+          <p>Serveur en fin de vie ? Licences trop chères ? On migre vers des solutions libres et fiables — Linux, Samba, Nextcloud. On gère aussi votre site web et vos emails pro. Vous n'avez pas à vous en occuper.</p>
+          <a href="/services/solutions" class="btn-primary">En savoir plus</a>
         </div>
         <div class="step" data-step="3">
           <h3>MAINTENANCE</h3>
           <span class="step-subtitle">Anticipez les pannes, pas les urgences</span>
-          <p>Supervision proactive, sauvegardes testées, mises à jour régulières. Nous gardons votre infrastructure en forme pour que vous puissiez vous concentrer sur votre métier.</p>
+          <p>Supervision, sauvegardes automatiques testées, mises à jour régulières. Et quand ça casse quand même, on intervient vite, sur site ou à distance. L'objectif : que vous n'ayez jamais à penser à votre informatique.</p>
           <a href="/services/maintenance" class="btn-primary">En savoir plus</a>
         </div>
       </div>
@@ -148,8 +148,8 @@
 
   .approach-circle-front .zone {
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
     background: transparent;
+    -webkit-tap-highlight-color: transparent;
     transition: background 0.5s ease;
   }
 
@@ -210,10 +210,6 @@
     border-radius: 50%;
   }
 
-
-  .center-logo-accent {
-    color: var(--color-accent);
-  }
   .steps-text {
     max-width: 500px;
     min-height: 500px;
@@ -253,36 +249,31 @@
   @media (max-width: 600px) {
     .approach-wheel,
     .approach-circle-zones { width: 280px; height: 280px; }
-  .center-logo-img {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
-    border-radius: 50%;
-  }
     .home-approach__text { transform: scale(0.65); }
     .home-approach__text p { font-size: 1rem; }
+    .center-logo-img { width: 50%; height: 50%; }
   }
 </style>
 
 <script is:inline>
-  document.addEventListener("astro:page-load", () => {
-  const rotations = ['assess', 'protect', 'monitor', 'educate'];
-  const frontZones = document.querySelectorAll('.approach-circle-front .zone');
-  const activeLayer = document.querySelector('.approach-circle-active');
-  const steps = document.querySelectorAll('.steps-text .step');
+  document.addEventListener('astro:page-load', () => {
+    const rotations = ['assess', 'protect', 'monitor', 'educate'];
+    const frontZones = document.querySelectorAll('.approach-circle-front .zone');
+    const activeLayer = document.querySelector('.approach-circle-active');
+    const steps = document.querySelectorAll('.steps-text .step');
 
-  frontZones.forEach((zone) => {
-    zone.addEventListener('click', () => {
-      const index = parseInt(zone.getAttribute('data-index'));
+    frontZones.forEach((zone) => {
+      zone.addEventListener('click', () => {
+        const index = parseInt(zone.getAttribute('data-index'));
 
-      frontZones.forEach(z => z.classList.remove('active'));
-      zone.classList.add('active');
+        frontZones.forEach(z => z.classList.remove('active'));
+        zone.classList.add('active');
 
-      activeLayer.className = 'approach-circle-zones approach-circle-active ' + rotations[index];
+        activeLayer.className = 'approach-circle-zones approach-circle-active ' + rotations[index];
 
-      steps.forEach(s => s.classList.remove('active'));
-      steps[index].classList.add('active');
+        steps.forEach(s => s.classList.remove('active'));
+        steps[index].classList.add('active');
+      });
     });
-  });
   });
 </script>
