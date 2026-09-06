@@ -177,6 +177,14 @@ import LogoDecode from "../components/LogoDecode.astro";
         document.body.classList.toggle("menu-open");
       });
     }
+    const hdr = document.getElementById("site-header");
+    let ls = 0;
+    window.addEventListener("scroll", () => {
+      const cs = window.scrollY;
+      if (cs > 80) { hdr.classList.add("navScrolled"); } else { hdr.classList.remove("navScrolled"); }
+      if (cs > ls && cs > 200) { hdr.classList.add("hidden-header"); } else { hdr.classList.remove("hidden-header"); }
+      ls = cs;
+    });
     document.querySelectorAll("[data-sal]").forEach(el => {
       el.classList.remove("sal-animate");
     });
